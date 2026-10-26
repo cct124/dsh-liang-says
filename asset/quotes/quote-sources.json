@@ -1,0 +1,2972 @@
+{
+  "sourceDocument": "asset/quotes/liang-wenfeng-public-statements.md",
+  "note": "按用户提供的汇编原文结构化，未独立核验外部出处。可靠性标签沿用原文；B/C 条目为流出实录整理。经典分是编辑权重，不是可靠性评分。",
+  "excluded": [
+    "核心十句与主题索引重复内容",
+    "2025 年会议、采访等事实记述",
+    "2026 年 9 月匿名消息源的媒体概括",
+    "编者说明与误传示例"
+  ],
+  "entries": {
+    "liang-8d62c29df4": [
+      {
+        "line": 136,
+        "section": "3.1",
+        "topic": "论量化与规模",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-5077ac1c0b": [
+      {
+        "line": 138,
+        "section": "3.1",
+        "topic": "论量化与规模",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-003693da7d": [
+      {
+        "line": 140,
+        "section": "3.1",
+        "topic": "论量化与规模",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-bf0b996d72": [
+      {
+        "line": 144,
+        "section": "3.1",
+        "topic": "论量化投资的本质",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-fdd2505a40": [
+      {
+        "line": 146,
+        "section": "3.1",
+        "topic": "论量化投资的本质",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-b4448bc693": [
+      {
+        "line": 148,
+        "section": "3.1",
+        "topic": "论量化投资的本质",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-bd32b0872c": [
+      {
+        "line": 150,
+        "section": "3.1",
+        "topic": "论量化投资的本质",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-3b21dd6c62": [
+      {
+        "line": 154,
+        "section": "3.1",
+        "topic": "论收益来源与市场有效性",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-b88d70eec0": [
+      {
+        "line": 156,
+        "section": "3.1",
+        "topic": "论收益来源与市场有效性",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-a02e0594d5": [
+      {
+        "line": 158,
+        "section": "3.1",
+        "topic": "论收益来源与市场有效性",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-a2a053a42a": [
+      {
+        "line": 160,
+        "section": "3.1",
+        "topic": "论收益来源与市场有效性",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-3a33e649ee": [
+      {
+        "line": 164,
+        "section": "3.1",
+        "topic": "论未来：多策略与基本面量化",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-248cabc21b": [
+      {
+        "line": 166,
+        "section": "3.1",
+        "topic": "论未来：多策略与基本面量化",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-790b04da5c": [
+      {
+        "line": 168,
+        "section": "3.1",
+        "topic": "论未来：多策略与基本面量化",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-a7d1ed4ced": [
+      {
+        "line": 172,
+        "section": "3.1",
+        "topic": "论对冲基金的边界",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-41699420c1": [
+      {
+        "line": 174,
+        "section": "3.1",
+        "topic": "论对冲基金的边界",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-3fecc80125": [
+      {
+        "line": 176,
+        "section": "3.1",
+        "topic": "论对冲基金的边界",
+        "year": 2019,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S1"
+        ]
+      }
+    ],
+    "liang-9ead727a34": [
+      {
+        "line": 185,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-aa9c90d6b3": [
+      {
+        "line": 187,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-00db66b16f": [
+      {
+        "line": 189,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-17710ed3fe": [
+      {
+        "line": 191,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-ec086a97a2": [
+      {
+        "line": 193,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-7056eb0a6b": [
+      {
+        "line": 195,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-8b10a0a291": [
+      {
+        "line": 197,
+        "section": "3.2",
+        "topic": "《中国证券报》专访：万亿级量化私募可期",
+        "year": 2019,
+        "reliability": "B",
+        "sourceIds": [
+          "S2"
+        ]
+      }
+    ],
+    "liang-900f6b3c5b": [
+      {
+        "line": 206,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-83ae2fb40a": [
+      {
+        "line": 208,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-1b54290f3c": [
+      {
+        "line": 210,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-1052505ed0": [
+      {
+        "line": 212,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-32d3e336ce": [
+      {
+        "line": 214,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-b6e5714183": [
+      {
+        "line": 216,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-83569e6725": [
+      {
+        "line": 218,
+        "section": "3.3",
+        "topic": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "year": 2021,
+        "reliability": "A/B",
+        "sourceIds": [
+          "S3"
+        ]
+      }
+    ],
+    "liang-4d6519d671": [
+      {
+        "line": 231,
+        "section": "4.1",
+        "topic": "为什么做大模型",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-bc2235391f": [
+      {
+        "line": 233,
+        "section": "4.1",
+        "topic": "为什么做大模型",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-6c4607a555": [
+      {
+        "line": 235,
+        "section": "4.1",
+        "topic": "为什么做大模型",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-ef67708827": [
+      {
+        "line": 239,
+        "section": "4.1",
+        "topic": "做研究，不做垂类和应用",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-74809a6674": [
+      {
+        "line": 241,
+        "section": "4.1",
+        "topic": "做研究，不做垂类和应用",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-3bfa1f8adf": [
+      {
+        "line": 243,
+        "section": "4.1",
+        "topic": "做研究，不做垂类和应用",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-9e9031e92c": [
+      {
+        "line": 245,
+        "section": "4.1",
+        "topic": "做研究，不做垂类和应用",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-abe3c954fd": [
+      {
+        "line": 247,
+        "section": "4.1",
+        "topic": "做研究，不做垂类和应用",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-6966eeb02c": [
+      {
+        "line": 251,
+        "section": "4.1",
+        "topic": "算力、钱与“钢琴”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-30c1794f20": [
+      {
+        "line": 253,
+        "section": "4.1",
+        "topic": "算力、钱与“钢琴”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-918e3d4a95": [
+      {
+        "line": 255,
+        "section": "4.1",
+        "topic": "算力、钱与“钢琴”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-c92a1fa9d3": [
+      {
+        "line": 257,
+        "section": "4.1",
+        "topic": "算力、钱与“钢琴”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-0f78e14efb": [
+      {
+        "line": 259,
+        "section": "4.1",
+        "topic": "算力、钱与“钢琴”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-7faf6f446b": [
+      {
+        "line": 261,
+        "section": "4.1",
+        "topic": "算力、钱与“钢琴”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-3ab159f234": [
+      {
+        "line": 265,
+        "section": "4.1",
+        "topic": "大厂、竞争与“信仰者”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-97d98da6f8": [
+      {
+        "line": 267,
+        "section": "4.1",
+        "topic": "大厂、竞争与“信仰者”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-7b46e11d49": [
+      {
+        "line": 269,
+        "section": "4.1",
+        "topic": "大厂、竞争与“信仰者”",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-26be21a6be": [
+      {
+        "line": 273,
+        "section": "4.1",
+        "topic": "经验、人才与组织",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-e1080373e4": [
+      {
+        "line": 275,
+        "section": "4.1",
+        "topic": "经验、人才与组织",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-f61b34b81a": [
+      {
+        "line": 277,
+        "section": "4.1",
+        "topic": "经验、人才与组织",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-d94a709359": [
+      {
+        "line": 279,
+        "section": "4.1",
+        "topic": "经验、人才与组织",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-4b7199bc93": [
+      {
+        "line": 281,
+        "section": "4.1",
+        "topic": "经验、人才与组织",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-142e15c920": [
+      {
+        "line": 283,
+        "section": "4.1",
+        "topic": "经验、人才与组织",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-8ec6bf2854": [
+      {
+        "line": 287,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-0951378ad1": [
+      {
+        "line": 289,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-582267d3cc": [
+      {
+        "line": 291,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-cc36043fbb": [
+      {
+        "line": 293,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-14a74de573": [
+      {
+        "line": 295,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-a7eaa017aa": [
+      {
+        "line": 297,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-c532cb08ae": [
+      {
+        "line": 299,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-28ec9fb209": [
+      {
+        "line": 301,
+        "section": "4.1",
+        "topic": "创新、疯狂与年轻人",
+        "year": 2023,
+        "reliability": "A",
+        "sourceIds": [
+          "S4"
+        ]
+      }
+    ],
+    "liang-0f36c51013": [
+      {
+        "line": 314,
+        "section": "5.1",
+        "topic": "价格战与定价原则",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-ed4c875e5e": [
+      {
+        "line": 316,
+        "section": "5.1",
+        "topic": "价格战与定价原则",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-2e6ca084dd": [
+      {
+        "line": 318,
+        "section": "5.1",
+        "topic": "价格战与定价原则",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-0b58b95a43": [
+      {
+        "line": 320,
+        "section": "5.1",
+        "topic": "价格战与定价原则",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-802aa43539": [
+      {
+        "line": 322,
+        "section": "5.1",
+        "topic": "价格战与定价原则",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-c387afd981": [
+      {
+        "line": 324,
+        "section": "5.1",
+        "topic": "价格战与定价原则",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-193b18fab3": [
+      {
+        "line": 328,
+        "section": "5.1",
+        "topic": "原创与模仿",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-2c6af4b718": [
+      {
+        "line": 330,
+        "section": "5.1",
+        "topic": "原创与模仿",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-eb8e37ccc0": [
+      {
+        "line": 332,
+        "section": "5.1",
+        "topic": "原创与模仿",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-7f8f4fb5a5": [
+      {
+        "line": 334,
+        "section": "5.1",
+        "topic": "原创与模仿",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-faff163ca7": [
+      {
+        "line": 336,
+        "section": "5.1",
+        "topic": "原创与模仿",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-3e3a74bfc9": [
+      {
+        "line": 338,
+        "section": "5.1",
+        "topic": "原创与模仿",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-59ad9a922d": [
+      {
+        "line": 342,
+        "section": "5.1",
+        "topic": "开源与护城河",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-bbc5824b21": [
+      {
+        "line": 344,
+        "section": "5.1",
+        "topic": "开源与护城河",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-42d552109e": [
+      {
+        "line": 346,
+        "section": "5.1",
+        "topic": "开源与护城河",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-e25f651301": [
+      {
+        "line": 348,
+        "section": "5.1",
+        "topic": "开源与护城河",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-66cca35b4c": [
+      {
+        "line": 350,
+        "section": "5.1",
+        "topic": "开源与护城河",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-7d430ab6aa": [
+      {
+        "line": 354,
+        "section": "5.1",
+        "topic": "中国 AI 的位置",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-50c4be72ec": [
+      {
+        "line": 356,
+        "section": "5.1",
+        "topic": "中国 AI 的位置",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-524b41d3ae": [
+      {
+        "line": 358,
+        "section": "5.1",
+        "topic": "中国 AI 的位置",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-4b292b08e4": [
+      {
+        "line": 360,
+        "section": "5.1",
+        "topic": "中国 AI 的位置",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-96af5e438c": [
+      {
+        "line": 364,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-59b9ac9fda": [
+      {
+        "line": 366,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-71d33606ee": [
+      {
+        "line": 368,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-91384c8645": [
+      {
+        "line": 370,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-caa412df6e": [
+      {
+        "line": 372,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-7e29aafbbb": [
+      {
+        "line": 374,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-5eaa691f73": [
+      {
+        "line": 376,
+        "section": "5.1",
+        "topic": "融资、芯片与竞争",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-18a85cfe28": [
+      {
+        "line": 380,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-1bdd5e162e": [
+      {
+        "line": 382,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-82bde807df": [
+      {
+        "line": 384,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-4e61ee50a3": [
+      {
+        "line": 386,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-5cbf54010a": [
+      {
+        "line": 388,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-f40d982ddc": [
+      {
+        "line": 390,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-28c3d238fc": [
+      {
+        "line": 392,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-2cd55cd780": [
+      {
+        "line": 394,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-27083956b5": [
+      {
+        "line": 396,
+        "section": "5.1",
+        "topic": "人与组织",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-99284ae7b1": [
+      {
+        "line": 400,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-0e3acd7b25": [
+      {
+        "line": 402,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-78328da80d": [
+      {
+        "line": 404,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-7590dae74d": [
+      {
+        "line": 406,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-4245267ee6": [
+      {
+        "line": 408,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-f213cfb12d": [
+      {
+        "line": 410,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-a7a3bebbf6": [
+      {
+        "line": 412,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-22361bf71a": [
+      {
+        "line": 414,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-2df1086176": [
+      {
+        "line": 416,
+        "section": "5.1",
+        "topic": "AGI 路线与终局",
+        "year": 2024,
+        "reliability": "A",
+        "sourceIds": [
+          "S5"
+        ]
+      }
+    ],
+    "liang-a5a21c24fd": [
+      {
+        "line": 474,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-b06211d73a": [
+      {
+        "line": 476,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-facd4d93a4": [
+      {
+        "line": 478,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ac52e4c239": [
+      {
+        "line": 480,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-397ed19c71": [
+      {
+        "line": 482,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-05d30ab5dd": [
+      {
+        "line": 484,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ffa7627331": [
+      {
+        "line": 486,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ea8be4aac8": [
+      {
+        "line": 488,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-6036fa10c9": [
+      {
+        "line": 492,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-4517e56263": [
+      {
+        "line": 494,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-dc153bf0b5": [
+      {
+        "line": 496,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-8e8cd66baf": [
+      {
+        "line": 498,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-b9d86dcca2": [
+      {
+        "line": 500,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-904c381a8a": [
+      {
+        "line": 502,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ef3baabd89": [
+      {
+        "line": 504,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-4dfd42f6ab": [
+      {
+        "line": 506,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-4624565c88": [
+      {
+        "line": 508,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-553a1327ae": [
+      {
+        "line": 510,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-83557c2d5c": [
+      {
+        "line": 512,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-8f84a6b762": [
+      {
+        "line": 514,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-f709cae29b": [
+      {
+        "line": 518,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-8998d4ff2c": [
+      {
+        "line": 520,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-82db1ae951": [
+      {
+        "line": 522,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-688ab16d5b": [
+      {
+        "line": 524,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-1d2ddd51d3": [
+      {
+        "line": 526,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-33813f9a2f": [
+      {
+        "line": 528,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-390dde0671": [
+      {
+        "line": 530,
+        "section": "7.1",
+        "topic": "7.1.3 开源：不是情怀，是算过的账",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-cc029e51a0": [
+      {
+        "line": 534,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-6547d22af1": [
+      {
+        "line": 536,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-9cc99f987c": [
+      {
+        "line": 538,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-91af49776b": [
+      {
+        "line": 540,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-db6e8a9759": [
+      {
+        "line": 542,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-9e19a3647e": [
+      {
+        "line": 546,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ec75605929": [
+      {
+        "line": 548,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-b3a05612bf": [
+      {
+        "line": 550,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-75ccf7750c": [
+      {
+        "line": 552,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-7360c1f0ad": [
+      {
+        "line": 554,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-e2baec30fc": [
+      {
+        "line": 556,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-31b2ba2ea9": [
+      {
+        "line": 560,
+        "section": "7.1",
+        "topic": "7.1.5 持续学习：全世界都还没有找到方法",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-e3427b8ebd": [
+      {
+        "line": 562,
+        "section": "7.1",
+        "topic": "7.1.5 持续学习：全世界都还没有找到方法",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-96cdfecd2a": [
+      {
+        "line": 564,
+        "section": "7.1",
+        "topic": "7.1.5 持续学习：全世界都还没有找到方法",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-3be8077b71": [
+      {
+        "line": 566,
+        "section": "7.1",
+        "topic": "7.1.5 持续学习：全世界都还没有找到方法",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-0300bedf79": [
+      {
+        "line": 568,
+        "section": "7.1",
+        "topic": "7.1.5 持续学习：全世界都还没有找到方法",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-0fd8e8e38e": [
+      {
+        "line": 572,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ec3a8c6a0e": [
+      {
+        "line": 574,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-0094d956f1": [
+      {
+        "line": 576,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ea63357588": [
+      {
+        "line": 578,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-46ba770a86": [
+      {
+        "line": 580,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ea33258c84": [
+      {
+        "line": 582,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-90875afbb1": [
+      {
+        "line": 584,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-9a0de44dad": [
+      {
+        "line": 586,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-4c104b2f3e": [
+      {
+        "line": 588,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-750bbe5e12": [
+      {
+        "line": 590,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-c79190a46d": [
+      {
+        "line": 592,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-57794e1515": [
+      {
+        "line": 594,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-23cecc9a0e": [
+      {
+        "line": 596,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-a5c0e011c5": [
+      {
+        "line": 598,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-518d13708c": [
+      {
+        "line": 600,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-00507eb5d8": [
+      {
+        "line": 602,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-db56d1674e": [
+      {
+        "line": 604,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-d948785ea7": [
+      {
+        "line": 606,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-9fd7b8bef8": [
+      {
+        "line": 610,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ea23bd9290": [
+      {
+        "line": 612,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ae0de7e88b": [
+      {
+        "line": 614,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-25c9f4cff4": [
+      {
+        "line": 616,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-ce1f5f8e72": [
+      {
+        "line": 618,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-2954a2c4dd": [
+      {
+        "line": 620,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-509c0ef9fd": [
+      {
+        "line": 622,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-0dbbc4db15": [
+      {
+        "line": 624,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-eb1ba92fe8": [
+      {
+        "line": 626,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-c889c4fa8a": [
+      {
+        "line": 628,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-f7ae0b5fca": [
+      {
+        "line": 630,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-97f1cf88d3": [
+      {
+        "line": 634,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-bdf4c896ba": [
+      {
+        "line": 636,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-2110cee3c4": [
+      {
+        "line": 638,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-1806dd5183": [
+      {
+        "line": 640,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-928c37e5d3": [
+      {
+        "line": 642,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-125ea0e6bd": [
+      {
+        "line": 644,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-d450f1f1ee": [
+      {
+        "line": 646,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-3e7e4987ca": [
+      {
+        "line": 648,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-5af282fc6c": [
+      {
+        "line": 650,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-7949365348": [
+      {
+        "line": 654,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-7e8d99c424": [
+      {
+        "line": 656,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-50a7e6bacb": [
+      {
+        "line": 658,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-5298cbce20": [
+      {
+        "line": 660,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-b7ad3ba94f": [
+      {
+        "line": 662,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-d6cb120c5f": [
+      {
+        "line": 664,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-b55ba21b22": [
+      {
+        "line": 666,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-43fe45aa5d": [
+      {
+        "line": 668,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-636ccea0ca": [
+      {
+        "line": 670,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-667896407e": [
+      {
+        "line": 672,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-6966ca2066": [
+      {
+        "line": 674,
+        "section": "7.1",
+        "topic": "7.1.9 商业化、数据与产品",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-90620c0cc3": [
+      {
+        "line": 678,
+        "section": "7.1",
+        "topic": "7.1.10 不做什么：视频、3D、世界模型与“只吃一块”",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-9cfe67c353": [
+      {
+        "line": 680,
+        "section": "7.1",
+        "topic": "7.1.10 不做什么：视频、3D、世界模型与“只吃一块”",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-9d922a5c64": [
+      {
+        "line": 682,
+        "section": "7.1",
+        "topic": "7.1.10 不做什么：视频、3D、世界模型与“只吃一块”",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-3ae28edb57": [
+      {
+        "line": 684,
+        "section": "7.1",
+        "topic": "7.1.10 不做什么：视频、3D、世界模型与“只吃一块”",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-44926fe5c3": [
+      {
+        "line": 686,
+        "section": "7.1",
+        "topic": "7.1.10 不做什么：视频、3D、世界模型与“只吃一块”",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-baaf52433d": [
+      {
+        "line": 690,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-603743a9ca": [
+      {
+        "line": 692,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-69cbf01ebd": [
+      {
+        "line": 694,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-e87b593d43": [
+      {
+        "line": 696,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-39a31e8ab6": [
+      {
+        "line": 698,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-8b8ca96de0": [
+      {
+        "line": 700,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ],
+    "liang-44ce53b4c7": [
+      {
+        "line": 702,
+        "section": "7.1",
+        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S13",
+          "S14"
+        ]
+      }
+    ]
+  }
+}

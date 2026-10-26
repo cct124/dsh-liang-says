@@ -1,0 +1,28 @@
+{
+  "name": "dsh-liang-says",
+  "version": "0.1.0-dev.4",
+  "description": "梁选模式的语录与视觉效果",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.9.0"
+  },
+  "scripts": {
+    "quotes": "node scripts/structure-quotes.mjs",
+    "quotes:check": "node scripts/structure-quotes.mjs --check",
+    "build:dev": "node scripts/build.mjs --dev",
+    "build": "node scripts/build.mjs",
+    "dev": "node scripts/build.mjs --dev --watch",
+    "dsh:install": "node scripts/dsh.mjs install",
+    "dsh:start": "node scripts/dsh.mjs start",
+    "test": "node --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "pack:dev": "npm run build:dev && npm pack ./dist/dev --pack-destination ./dist"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "18.3.31",
+    "esbuild": "0.28.1",
+    "typescript": "6.0.3"
+  }
+}
