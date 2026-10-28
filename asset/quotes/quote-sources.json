@@ -2905,6 +2905,17 @@
           "S13"
         ]
       }
+    ],
+    "liang-5a6ba38868": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "userQuotes",
+        "item": 0,
+        "topic": "谈开源的初衷",
+        "addedAt": "2026-10-28",
+        "reliability": "用户提供",
+        "sourceIds": []
+      }
     ]
   },
   "review": {
@@ -2919,7 +2930,7 @@
       "note": "每经记者据交流实录整理，报道确认会议月份，未确认具体日。内容对应不等于逐字一致，也不等于本人授权公开。未收录的其他来源内容不据此判假。"
     },
     "originalCount": 212,
-    "currentCount": 189,
+    "currentCount": 190,
     "withheld": [
       {
         "id": "liang-23cecc9a0e",
@@ -5533,6 +5544,17 @@
           "locators": [
             "专题5、专题7"
           ]
+        }
+      },
+      "liang-5a6ba38868": {
+        "kind": "user-excerpt",
+        "context": "谈开源的初衷",
+        "originalIds": [],
+        "reason": "按用户提供的原文及经典分补充，未指定外部出处。",
+        "verification": {
+          "status": "user-provided",
+          "sourceId": null,
+          "locators": []
         }
       }
     }

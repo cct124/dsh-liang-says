@@ -8,7 +8,8 @@ export function quotePresentation(id: string) {
   const kind = context?.kind ?? 'excerpt';
   const label = kind === 'summary' ? '观点整理，非逐字引语'
     : kind === 'combined-excerpt' ? '节选合并'
-    : kind === 'edited-excerpt' ? '校订节选' : '原汇编节选';
+    : kind === 'edited-excerpt' ? '校订节选'
+    : kind === 'user-excerpt' ? '用户补充节选' : '原汇编节选';
   return {
     kind, label,
     signature: '——梁文锋',

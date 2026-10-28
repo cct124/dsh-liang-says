@@ -15,7 +15,7 @@ test('every original item is retained, incorporated, explicitly corrected, dedup
   originalIds.push(...sources.review.withheld.map((entry: any) => entry.id));
   assert.equal(originalIds.length, 212);
   assert.equal(new Set(originalIds).size, 212);
-  assert.equal(catalog.length, 189);
+  assert.equal(catalog.length, 190);
   assert.equal(sources.review.withheld.length, 2);
   for (const quote of catalog) {
     const id = 'liang-' + createHash('sha256').update(quote.text.replace(/[\s\p{P}]/gu, '')).digest('hex').slice(0, 10);

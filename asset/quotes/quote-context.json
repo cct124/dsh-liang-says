@@ -943,5 +943,10 @@
     "kind": "summary",
     "context": "大模型的资源门槛",
     "dateLabel": "2026年5月"
+  },
+  "liang-5a6ba38868": {
+    "kind": "user-excerpt",
+    "context": "谈开源的初衷",
+    "dateLabel": "日期未注明"
   }
 }

@@ -13,21 +13,20 @@ body:not([data-ds-dark-theme]) .lx-overlay {
   --lx-particle-3: #ba985c; --lx-particle-4: #d3ae69;
   --lx-particle-settle: var(--lx-ink);
 }
-/* Control the light-mode portrait and rays independently. */
-body:not([data-ds-dark-theme]) .lx-art { opacity: 1; }
+/* Keep light-mode rays at their existing brightness without dimming the portrait. */
+body:not([data-ds-dark-theme]) .lx-light { opacity: 1; }
 body:not([data-ds-dark-theme]) :is(.lx-aureole, .lx-rays, .lx-halo) { opacity: .5; }
-body:not([data-ds-dark-theme]) .lx-portrait { opacity: .7; mask-image: none; }
 .lx-shade { position: absolute; inset: 0; background: var(--lx-shade); }
 .lx-art {
   --lx-portrait-height: 112cqh; --lx-portrait-top: 12cqh;
-  position: absolute; inset: 0; opacity: .5; isolation: isolate; pointer-events: none; overflow: hidden;
+  position: absolute; inset: 0; opacity: 1; isolation: isolate; pointer-events: none; overflow: hidden;
   /* Composite the fixed silhouette and portrait before scaling their shared parent. */
   transform-origin: 50% calc(var(--lx-portrait-top) + var(--lx-portrait-height) * .5);
   animation: lx-art-breathe 10s ease-in-out infinite;
 }
-/* Subtract the PNG's alpha from the lights themselves, so a translucent portrait cannot transmit rays. */
+/* Subtract the PNG's alpha from the lights, keeping the portrait silhouette clear. */
 .lx-light {
-  position: absolute; inset: 0; z-index: 0;
+  position: absolute; inset: 0; z-index: 0; opacity: .5;
   mask-image: linear-gradient(#000 0 0), var(--lx-portrait-mask);
   mask-size: 100% 100%, auto var(--lx-portrait-height);
   mask-position: 0 0, center var(--lx-portrait-top);
@@ -38,7 +37,7 @@ body:not([data-ds-dark-theme]) .lx-portrait { opacity: .7; mask-image: none; }
 .lx-rays { position: absolute; width: 180cqmax; height: 180cqmax; left: 50%; top: 28%; border-radius: 50%; background: repeating-conic-gradient(from 0deg, #ffdf8c88 0deg, #ffe8af44 4deg, transparent 8deg, transparent 16deg); mask-image: radial-gradient(circle, transparent 0%, black 8%, #0008 36%, transparent 65%); animation: lx-rays 80s linear infinite; }
 .lx-rays-soft { background: repeating-conic-gradient(from 8deg, #ffe3a04d 0deg, transparent 6deg, transparent 23deg); animation-duration: 125s; animation-direction: reverse; }
 .lx-halo { position: absolute; left: 50%; top: 28%; width: 34cqh; height: 34cqh; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle, #fff6c8ee, #ffe18daa 32%, #e8ac3666 50%, transparent 72%); filter: blur(4px); }
-.lx-portrait { position: absolute; z-index: 2; height: var(--lx-portrait-height); width: auto; max-width: none; left: 50%; top: var(--lx-portrait-top); opacity: .7; object-fit: contain; transform: translateX(-50%); mask-image: linear-gradient(black 0%, black 58%, transparent 95%); }
+.lx-portrait { position: absolute; z-index: 2; height: var(--lx-portrait-height); width: auto; max-width: none; left: 50%; top: var(--lx-portrait-top); opacity: .85; object-fit: contain; transform: translateX(-50%); }
 .lx-edition { position: absolute; top: 6%; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 18px; font-family: 'STSong', 'SimSun', serif; font-size: 12px; color: var(--lx-edition-ink); pointer-events: none; }
 .lx-edition-line { width: 34px; height: 1px; background: var(--lx-rule); }
 .lx-edition-label { display: inline-flex; align-items: center; gap: 10px; }

@@ -184,6 +184,9 @@ test('the shipped catalog has three fields and each entry has traceable editoria
       assert.equal(quote.text, originals.join('……'));
     } else if (editorial.kind === 'edited-excerpt') {
       assert.ok(review.revisions.some((revision: { text?: string }) => revision.text === quote.text));
+    } else if (editorial.kind === 'user-excerpt') {
+      assert.ok(review.userQuotes.some((entry: { text: string; classicScore: number }) =>
+        entry.text === quote.text && entry.classicScore === quote.classicScore));
     } else {
       assert.equal(editorial.kind, 'summary');
       assert.ok(review.supplements.some((summary: { text: string }) => summary.text === quote.text));

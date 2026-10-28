@@ -77,6 +77,17 @@ export function reviewQuotes(originals, review) {
       display: { kind: 'summary', context: row.context, dateLabel: '2026年5月' },
     });
   }
+  for (const [index, row] of (review.userQuotes ?? []).entries()) {
+    quotes.push({
+      id: quoteId(row.text), text: row.text, classicScore: row.classicScore,
+      locations: [{ document: 'asset/quotes/editorial-review.json', section: 'userQuotes', item: index,
+        topic: row.context, addedAt: row.addedAt, reliability: '用户提供', sourceIds: [] }],
+      editorial: { kind: 'user-excerpt', context: row.context, originalIds: [],
+        reason: '按用户提供的原文及经典分补充，未指定外部出处。',
+        verification: { status: 'user-provided', sourceId: null, locators: [] } },
+      display: { kind: 'user-excerpt', context: row.context, dateLabel: '日期未注明' },
+    });
+  }
   if (new Set(quotes.map(quote => quote.id)).size !== quotes.length) throw new Error('Duplicate curated quote');
   return { quotes, withheld };
 }
