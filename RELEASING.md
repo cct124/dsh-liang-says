@@ -29,7 +29,7 @@ git diff --check
 
 输出文件：
 
-- `dist/dsh-liang-says-0.1.0.tgz`：可安装和上传的正式包。
+- `dist/dsh-liang-says-0.1.1.tgz`：当前待测试版本的正式包；生成文件不代表已经发布。
 - `dist/SHA256SUMS`：安装包 SHA-256。
 - `dist/release-info.json`：版本、文件清单、包大小及 npm integrity。
 - `dist/release-notes.md`：`release:metadata` 从 CHANGELOG 当前版本段落提取的发布说明。
@@ -41,7 +41,7 @@ git diff --check
 在测试用 DSH profile 中安装 `.tgz` 并重启，确认默认开关、任务开始/结束、关闭音效、权限等待、会话切换、深浅色模式与面板边界。不要与开发包同时启用。
 
 ```powershell
-dsh plugin --profile web add ./dist/dsh-liang-says-0.1.0.tgz
+dsh plugin --profile web add ./dist/dsh-liang-says-0.1.1.tgz
 ```
 
 适配范围是 DSH `0.2.1-rc.3` Web；其他宿主版本及原生 Desktop 尚未验证，不扩大 `engines.dsh` 范围。

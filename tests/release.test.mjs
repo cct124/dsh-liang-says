@@ -118,13 +118,21 @@ test('new npm releases publish once and wait for matching registry integrity', a
 
 const assets = [{ name: metadata.filename, bytes: archive }, { name: 'SHA256SUMS', bytes: Buffer.from(sums) }];
 function githubFixture(initial) {
-  let release = initial && structuredClone(initial);
+  let release = initial && { id: 42, tag_name: metadata.tag, ...structuredClone(initial) };
   const commands = [];
-  return { commands,
-    api: async path => path.startsWith('releases/assets/') ? archive : structuredClone(release),
+  const requests = [];
+  return { commands, requests,
+    api: async path => {
+      requests.push(path);
+      if (path.startsWith('releases/assets/')) return archive;
+      if (path.startsWith('releases/tags/')) return release?.draft ? null : structuredClone(release);
+      if (path.startsWith('releases?')) return release ? [structuredClone(release)] : [];
+      if (path === 'releases/42') return structuredClone(release);
+      throw new Error(`Unexpected GitHub API path: ${path}`);
+    },
     run: args => {
       commands.push(args);
-      if (args[1] === 'create') release = { draft: true, prerelease: false, assets: [] };
+      if (args[1] === 'create') release = { id: 42, tag_name: metadata.tag, draft: true, prerelease: false, assets: [] };
       if (args[1] === 'upload') {
         const asset = assets.find(asset => `dist/${asset.name}` === args[3]);
         release.assets.push({ id: release.assets.length + 1, name: asset.name, digest: `sha256:${sha256(asset.bytes)}` });
@@ -140,6 +148,8 @@ test('GitHub creates a draft, uploads reviewed files, verifies them and publishe
   assert.deepEqual(fixture.commands.map(command => command[1]), ['create', 'upload', 'upload', 'edit']);
   assert(fixture.commands[0].includes('--verify-tag'));
   assert(fixture.commands[0].includes('--draft'));
+  assert(fixture.requests.includes('releases?per_page=100&page=1'));
+  assert.equal(fixture.requests.at(-1), 'releases/42');
 });
 
 test('GitHub reruns complete a partial draft and do not replace verified assets', async () => {
@@ -148,6 +158,20 @@ test('GitHub reruns complete a partial draft and do not replace verified assets'
   assert.equal(await publishGithub(metadata, assets, fixture), 'published');
   assert.deepEqual(fixture.commands.map(command => command[1]), ['upload', 'edit']);
   assert.equal(fixture.commands[0][3], 'dist/SHA256SUMS');
+});
+
+test('GitHub finds an older draft on subsequent release pages without creating a duplicate', async () => {
+  const fixture = githubFixture({ draft: true, prerelease: false, assets: [] });
+  const pages = [];
+  assert.equal(await publishGithub(metadata, assets, { ...fixture, api: async path => {
+    if (path.startsWith('releases?')) pages.push(path);
+    if (path === 'releases?per_page=100&page=1') {
+      return Array.from({ length: 100 }, (_, i) => ({ tag_name: `unrelated-${i}` }));
+    }
+    return fixture.api(path);
+  } }), 'published');
+  assert.deepEqual(pages, ['releases?per_page=100&page=1', 'releases?per_page=100&page=2']);
+  assert.deepEqual(fixture.commands.map(command => command[1]), ['upload', 'upload', 'edit']);
 });
 
 test('GitHub public releases are checked without modification; missing or different files stop the run', async () => {

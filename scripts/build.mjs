@@ -17,14 +17,13 @@ const manifest = {
   repository: packageInfo.repository, homepage: packageInfo.homepage, bugs: packageInfo.bugs,
   ...(dev ? {} : { publishConfig: { access: 'public', registry: 'https://registry.npmjs.org/' } }),
   description: dev ? '梁选开关与动效的 DSH 内置开发预览' : '在任意模式任务运行期间展示梁文锋语录，可通过输入框梁选开关控制',
-  engines: { dsh: '0.2.1-rc.3' },
+  engines: { dsh: packageInfo.engines.dsh },
   exports: { '.': './index.js', './client': './client.js', './locale/*.json': './locale/*.json', './icon': './icon.svg' },
   files: ['index.js', 'client.js', 'cordis.patch.yml', 'locale', 'icon.svg', 'README.md', 'CHANGELOG.md',
     'LICENSE', 'THIRD_PARTY_NOTICES.md', 'asset/quotes/quotes.json', 'asset/quotes/quote-context.json'],
   dsh: {
     bundle: { patch: './cordis.patch.yml' },
-    client: { platform: 'web', immediately: true, inject: ['@deepseek-ai/dsh-client-ui-layout',
-      '@deepseek-ai/dsh-client-ui-session', '@deepseek-ai/dsh-client-ui-conversation',
+    client: { ...packageInfo.dsh.client, inject: [...packageInfo.dsh.client.inject,
       ...(dev ? ['@deepseek-ai/dsh-client-ui-sidebar'] : [])] },
   },
 };

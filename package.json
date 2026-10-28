@@ -1,6 +1,6 @@
 {
   "name": "dsh-liang-says",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "任意模式任务运行期间的梁选语录与视觉效果",
   "private": true,
   "license": "MIT",
@@ -14,9 +14,30 @@
     "url": "https://github.com/cct124/dsh-liang-says/issues"
   },
   "engines": {
-    "node": ">=24.9.0"
+    "node": ">=24.9.0",
+    "dsh": "0.2.1-rc.3"
+  },
+  "exports": {
+    ".": "./dist/release/index.js",
+    "./client": "./dist/release/client.js",
+    "./locale/*.json": "./dist/release/locale/*.json",
+    "./icon": "./dist/release/icon.svg"
+  },
+  "files": ["dist/release"],
+  "dsh": {
+    "bundle": { "patch": "./dist/release/cordis.patch.yml" },
+    "client": {
+      "platform": "web",
+      "immediately": true,
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-layout",
+        "@deepseek-ai/dsh-client-ui-session",
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
   },
   "scripts": {
+    "prepare": "npm run build",
     "quotes": "node scripts/structure-quotes.mjs",
     "quotes:check": "node scripts/structure-quotes.mjs --check",
     "build:dev": "node scripts/build.mjs --dev",
@@ -28,6 +49,7 @@
     "typecheck": "tsc --noEmit",
     "pack:dev": "npm run build:dev && npm pack ./dist/dev --pack-destination ./dist",
     "check": "npm run quotes:check && npm run typecheck && npm test",
+    "check:git-install": "node scripts/check-git-install.mjs",
     "pack:release": "npm run build && node scripts/pack-release.mjs",
     "release:prepare": "npm run check && npm run pack:release",
     "release:metadata": "node scripts/release.mjs metadata",

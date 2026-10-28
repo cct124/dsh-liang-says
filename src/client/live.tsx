@@ -7,6 +7,8 @@ import { LiveQuotes } from '../core/live-quotes.ts';
 import type { DshClientContext, ShellProps } from './dsh-contract.ts';
 import { QuoteOverlay } from './overlay.tsx';
 import { LiangToggle } from './toggle.tsx';
+import { isComposerTyping } from './composer-activity.ts';
+import { useComposerTyping } from './use-composer-typing.ts';
 import artworkCss from './artwork.css';
 import liveCss from './live.css';
 
@@ -46,15 +48,16 @@ function LiveOverlay({ preference, picker, useSessions, useSessionStatus, usePan
   const waitingForUser = useSessionStatus(state => sessionId !== undefined && state.get(sessionId)?.pendingInteraction !== undefined);
   const inConversation = usePanelInfo(state => state.activePanelId === null);
   const enabled = React.useSyncExternalStore(preference.subscribe, preference.getSnapshot);
+  const userTyping = useComposerTyping();
   const [visible, setVisible] = React.useState(!document.hidden);
   const [reduced, setReduced] = React.useState(() => matchMedia('(prefers-reduced-motion: reduce)').matches);
-  const live = React.useMemo(() => new LiveQuotes(new Simulation(picker)), [picker]);
+  const live = React.useMemo(() => new LiveQuotes(new Simulation(picker, Math.random, () => !isComposerTyping())), [picker]);
   const simulation = live.simulation;
   const state = React.useSyncExternalStore(simulation.subscribe, simulation.getSnapshot);
   const [error, setError] = React.useState('');
   React.useLayoutEffect(() => {
-    live.sync({ sessionId, running, enabled, visible: visible && inConversation, waitingForUser });
-  }, [live, sessionId, running, enabled, visible, inConversation, waitingForUser]);
+    live.sync({ sessionId, running, enabled, visible: visible && inConversation, waitingForUser, userTyping });
+  }, [live, sessionId, running, enabled, visible, inConversation, waitingForUser, userTyping]);
   React.useEffect(() => {
     let previous = performance.now();
     const visibility = () => { previous = performance.now(); setVisible(!document.hidden); };
@@ -76,8 +79,8 @@ function LiveOverlay({ preference, picker, useSessions, useSessionStatus, usePan
   const onEntered = React.useCallback((ticket: number) => { simulation.completeEntrance(ticket); }, [simulation]);
   const dismiss = React.useCallback(() => simulation.dismiss(), [simulation]);
   const onError = React.useCallback((message: string) => setError(message), []);
-  // Unmount immediately on disable/navigation/approval so neither sound nor an old frame blocks controls.
-  if (!enabled || !visible || !inConversation || waitingForUser || !sessionId) return null;
+  // Unmount immediately so neither an old frame nor its sound interrupts editing or host controls.
+  if (!enabled || !visible || !inConversation || waitingForUser || userTyping || !sessionId) return null;
   return <div className="lx-live-stage" key={sessionId}>
     <style>{artworkCss + liveCss}</style>
     <QuoteOverlay request={state.request} commit={commit} onEntered={onEntered} dismiss={dismiss}
