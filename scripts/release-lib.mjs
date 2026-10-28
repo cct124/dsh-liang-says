@@ -50,16 +50,29 @@ export async function publishNpm(info, publish, { request = fetch, wait = () => 
   throw new Error('npm publish returned success, but the registry has not exposed this version yet. Re-run to verify.');
 }
 
+async function findGithubRelease(tag, api) {
+  const published = await api(`releases/tags/${encodeURIComponent(tag)}`);
+  if (published) return published;
+  // The tag endpoint excludes drafts; authenticated listings include them.
+  for (let page = 1; ; page++) {
+    const releases = await api(`releases?per_page=100&page=${page}`);
+    assert(Array.isArray(releases), 'GitHub did not return a release list.');
+    const release = releases.find(item => item.tag_name === tag);
+    if (release) return release;
+    if (releases.length < 100) return null;
+  }
+}
+
 /** Resume a partial draft, but never replace an existing asset or public release. */
 export async function publishGithub(metadata, assets, { api, run }) {
-  const releasePath = `releases/tags/${encodeURIComponent(metadata.tag)}`;
-  let release = await api(releasePath);
+  let release = await findGithubRelease(metadata.tag, api);
   if (!release) {
     run(['release', 'create', metadata.tag, '--verify-tag', '--draft', '--title', metadata.tag,
       '--notes-file', 'dist/release-notes.md', ...(metadata.prerelease ? ['--prerelease'] : [])]);
-    release = await api(releasePath);
+    release = await findGithubRelease(metadata.tag, api);
     assert(release?.draft, 'GitHub did not create a draft release.');
   }
+  const releasePath = `releases/${release.id}`;
   assert.equal(release.prerelease, metadata.prerelease, 'GitHub prerelease flag mismatch.');
   for (const asset of assets) {
     const remote = release.assets.find(item => item.name === asset.name);

@@ -29,9 +29,11 @@ export class Simulation {
   private readonly listeners = new Set<() => void>();
   readonly picker: QuotePicker;
   private readonly durationRandom: () => number;
-  constructor(picker: QuotePicker, durationRandom = Math.random) {
+  private readonly canShow: () => boolean;
+  constructor(picker: QuotePicker, durationRandom = Math.random, canShow = () => true) {
     this.picker = picker;
     this.durationRandom = durationRandom;
+    this.canShow = canShow;
   }
   getSnapshot = (): SimulationState => this.state;
   subscribe = (listener: () => void): (() => void) => {
@@ -69,7 +71,7 @@ export class Simulation {
     if (elapsedMs >= state.durationMs) this.show();
   }
   show(forcedId?: string): boolean {
-    if (!this.state.enabled || !this.state.visible || this.state.pending) return false;
+    if (!this.state.enabled || !this.state.visible || this.state.pending || !this.canShow()) return false;
     const quote = this.picker.choose(forcedId);
     const durationMs = quoteDurationMs(quote.classicScore, this.durationRandom);
     this.update({ request: { ticket: ++this.serial, quote, durationMs }, durationMs, elapsedMs: 0, pending: true });
@@ -78,6 +80,8 @@ export class Simulation {
   /** Called once when the overlay actually begins displaying this quote. */
   commit(ticket: number): boolean {
     if (this.state.request?.ticket !== ticket || this.committedTicket === ticket) return false;
+    // Recheck after the async entrance, immediately before counting a quote or playing audio.
+    if (!this.canShow()) { this.dismiss(); return false; }
     this.picker.recordShown(this.state.request.quote.id);
     this.committedTicket = ticket;
     this.update({ shown: this.state.shown + 1 });

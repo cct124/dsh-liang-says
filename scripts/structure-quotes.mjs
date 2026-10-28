@@ -129,7 +129,7 @@ for (const [filename, value] of output) {
   const content = JSON.stringify(value, null, 2) + '\n';
   const url = new URL(filename, root);
   if (process.argv.includes('--check')) {
-    if (await readFile(url, 'utf8') !== content) throw new Error('Outdated: ' + filename);
+    if ((await readFile(url, 'utf8')).replaceAll('\r\n', '\n') !== content) throw new Error('Outdated: ' + filename);
   } else await writeFile(url, content);
 }
 console.log(`${quotes.length} unique quotes; ${Math.min(...quotes.map(q => q.text.length))}–${Math.max(...quotes.map(q => q.text.length))} characters. ${process.argv.includes('--check') ? 'Verified' : 'Written'} ${fileURLToPath(new URL('asset/quotes/quotes.json', root))}`);
