@@ -1,0 +1,42 @@
+name: Build after main merge
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [closed]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    # Only execute code after it has been accepted into main, never the PR head.
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.event.pull_request.merge_commit_sha }}
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - run: npm install --global npm@11.21.1 --ignore-scripts
+      - run: npm ci --ignore-scripts
+      - id: metadata
+        run: npm run release:metadata
+      - run: npm run release:prepare
+      - run: npm run build:dev
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: main-pr-${{ github.event.pull_request.number }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            dist/${{ steps.metadata.outputs.filename }}
+            dist/SHA256SUMS
+            dist/release-info.json
+            dist/release-notes.md
+          if-no-files-found: error
+          retention-days: 30
+          compression-level: 0

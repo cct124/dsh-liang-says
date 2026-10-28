@@ -12,11 +12,15 @@ const packageInfo = JSON.parse(await readFile(resolve(root, 'package.json'), 'ut
 await mkdir(resolve(output, 'locale'), { recursive: true });
 await mkdir(resolve(output, 'asset/quotes'), { recursive: true });
 const manifest = {
-  name, version: packageInfo.version, private: true, type: 'module',
+  name, version: packageInfo.version, private: dev, type: 'module',
+  license: packageInfo.license,
+  repository: packageInfo.repository, homepage: packageInfo.homepage, bugs: packageInfo.bugs,
+  ...(dev ? {} : { publishConfig: { access: 'public', registry: 'https://registry.npmjs.org/' } }),
   description: dev ? '梁选开关与动效的 DSH 内置开发预览' : '在任意模式任务运行期间展示梁文锋语录，可通过输入框梁选开关控制',
   engines: { dsh: '0.2.1-rc.3' },
   exports: { '.': './index.js', './client': './client.js', './locale/*.json': './locale/*.json', './icon': './icon.svg' },
-  files: ['index.js', 'client.js', 'cordis.patch.yml', 'locale', 'icon.svg', 'asset/quotes/quotes.json', 'asset/quotes/quote-context.json'],
+  files: ['index.js', 'client.js', 'cordis.patch.yml', 'locale', 'icon.svg', 'README.md', 'CHANGELOG.md',
+    'LICENSE', 'THIRD_PARTY_NOTICES.md', 'asset/quotes/quotes.json', 'asset/quotes/quote-context.json'],
   dsh: {
     bundle: { patch: './cordis.patch.yml' },
     client: { platform: 'web', immediately: true, inject: ['@deepseek-ai/dsh-client-ui-layout',
@@ -28,6 +32,9 @@ await writeFile(resolve(output, 'package.json'), JSON.stringify(manifest, null, 
 await writeFile(resolve(output, 'cordis.patch.yml'), `- insert:\n    - id: ${name}\n      name: '${name}'\n`);
 await copyFile(resolve(root, 'asset/icon.svg'), resolve(output, 'icon.svg'));
 await copyFile(resolve(root, 'README.md'), resolve(output, 'README.md'));
+await copyFile(resolve(root, 'CHANGELOG.md'), resolve(output, 'CHANGELOG.md'));
+await copyFile(resolve(root, 'LICENSE'), resolve(output, 'LICENSE'));
+await copyFile(resolve(root, 'asset/sfx/README.md'), resolve(output, 'THIRD_PARTY_NOTICES.md'));
 await copyFile(resolve(root, 'asset/quotes/quotes.json'), resolve(output, 'asset/quotes/quotes.json'));
 await copyFile(resolve(root, 'asset/quotes/quote-context.json'), resolve(output, 'asset/quotes/quote-context.json'));
 for (const [locale, title, description] of [

@@ -15,7 +15,7 @@ import type { LiangPreference } from '../core/preference.ts';
 
 const NS = 'liang.preview';
 const PANEL = 'liang-preview';
-type Source = { year: number; reliability: string; sourceIds: string[]; line?: number };
+type Source = { year?: number; reliability: string; sourceIds: string[]; line?: number };
 const sources: Record<string, Source[]> = sourceData.entries;
 const reviewEntries: Record<string, { verification: { status: string; locators: string[] } }> = sourceData.review.entries;
 
@@ -123,7 +123,7 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
       </div>
       {current && <div className="lx-quote-info"><span>{t('selected')}: {current.id}</span><span>{t('score')} {current.classicScore}</span>
         <span>{t('hold')}: {state.durationMs / 1000} {t('seconds')}</span>
-        <span>{t('source')} {source?.year} · {source?.sourceIds.join('/')} · {source?.reliability}{source?.reliability === 'B/C' ? ' · ' + t('excerpt') : ''}</span>
+        <span>{t('source')} {[source?.year, source?.sourceIds.join('/'), source?.reliability].filter(Boolean).join(' · ')}{source?.reliability === 'B/C' ? ' · ' + t('excerpt') : ''}</span>
         <span>{quotePresentation(current.id).label}</span>
         <span>{t('review')}: {t((reviewEntries[current.id]?.verification.status ?? 'outside-scope') as 'supported')}</span>
         {reviewEntries[current.id]?.verification.locators.length > 0 && <a href={sourceData.review.source.url} target="_blank" rel="noreferrer">{t('reviewSource')}</a>}</div>}

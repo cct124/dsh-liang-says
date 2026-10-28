@@ -22,6 +22,7 @@ export const zh = {
   source: '出处', excerpt: '流出实录整理', error: '预览错误', search: '搜索语录',
   review: '本次核对', reviewSource: '每经报道', supported: '报道内容可对应（非逐字认证）',
   partial: '部分内容可对应', 'not-covered': '本报道未收录，沿用原来源',
+  'user-provided': '用户提供，未独立核验',
   'outside-scope': '其他年份，未在本次外部核验', summary: '据报道整理观点',
   empty: '没有匹配的语录', minutes: '模拟已运行', closeCatalog: '收起语录库',
 };
@@ -49,6 +50,7 @@ export const en: Record<keyof typeof zh, string> = {
   error: 'Preview error', search: 'Search quotes', empty: 'No matching quotes',
   review: 'Review', reviewSource: 'NBD report', supported: 'Content supported, not verbatim certification',
   partial: 'Partly supported', 'not-covered': 'Not covered; original sources retained',
+  'user-provided': 'User supplied; not independently verified',
   'outside-scope': 'Other year; not externally checked in this review', summary: 'Editorial summary of the report',
   minutes: 'Simulation time', closeCatalog: 'Close library',
 };
