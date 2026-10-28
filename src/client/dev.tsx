@@ -2,6 +2,7 @@ import * as React from 'react';
 import quotes from '../../asset/quotes/quotes.json';
 import sourceData from '../../asset/quotes/quote-sources.json';
 import { QuotePicker } from '../core/quote-picker.ts';
+import { quotePresentation } from '../core/quote-presentation.ts';
 import { Simulation, isTaskRunning, type Phase } from '../core/simulation.ts';
 import { QuoteOverlay } from './overlay.tsx';
 import { zh, en, type Translate } from './locales.ts';
@@ -14,8 +15,9 @@ import type { LiangPreference } from '../core/preference.ts';
 
 const NS = 'liang.preview';
 const PANEL = 'liang-preview';
-type Source = { year: number; reliability: string; sourceIds: string[]; line: number };
+type Source = { year: number; reliability: string; sourceIds: string[]; line?: number };
 const sources: Record<string, Source[]> = sourceData.entries;
+const reviewEntries: Record<string, { verification: { status: string; locators: string[] } }> = sourceData.review.entries;
 
 export const inject = ['slots', 'locale'];
 export function apply(ctx: DshClientContext): void {
@@ -121,11 +123,14 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
       </div>
       {current && <div className="lx-quote-info"><span>{t('selected')}: {current.id}</span><span>{t('score')} {current.classicScore}</span>
         <span>{t('hold')}: {state.durationMs / 1000} {t('seconds')}</span>
-        <span>{t('source')} {source?.year} · {source?.sourceIds.join('/')} · {source?.reliability}{source?.reliability === 'B/C' ? ' · ' + t('excerpt') : ''}</span></div>}
+        <span>{t('source')} {source?.year} · {source?.sourceIds.join('/')} · {source?.reliability}{source?.reliability === 'B/C' ? ' · ' + t('excerpt') : ''}</span>
+        <span>{quotePresentation(current.id).label}</span>
+        <span>{t('review')}: {t((reviewEntries[current.id]?.verification.status ?? 'outside-scope') as 'supported')}</span>
+        {reviewEntries[current.id]?.verification.locators.length > 0 && <a href={sourceData.review.source.url} target="_blank" rel="noreferrer">{t('reviewSource')}</a>}</div>}
       {error && <p role="alert" className="lx-error">{t('error')}: {error}</p>}
       {library && <div className="lx-library"><input className="lx-search" type="search" placeholder={t('search')} aria-label={t('search')} value={search} onChange={event => setSearch(event.target.value)} />
         <div className="lx-table-scroll"><table><thead><tr><th>{t('catalog')}</th><th>{t('score')}</th><th>{t('penalty')}</th><th>{t('chance')}</th></tr></thead>
-          <tbody>{rows.map(row => <tr key={row.quote.id}><td><button type="button" disabled={state.pending || !state.enabled} onClick={() => simulation.show(row.quote.id)}>{row.quote.text}</button></td><td>{row.quote.classicScore}</td><td>{row.penalty}</td><td>{(row.probability * 100).toFixed(2)}%</td></tr>)}</tbody></table>{!rows.length && <p>{t('empty')}</p>}</div>
+          <tbody>{rows.map(row => <tr key={row.quote.id}><td><button type="button" disabled={state.pending || !state.enabled} onClick={() => simulation.show(row.quote.id)}>{row.quote.text}</button><small className="lx-library-context">{quotePresentation(row.quote.id).caption}</small></td><td>{row.quote.classicScore}</td><td>{row.penalty}</td><td>{(row.probability * 100).toFixed(2)}%</td></tr>)}</tbody></table>{!rows.length && <p>{t('empty')}</p>}</div>
       </div>}
     </div>
   </section>;

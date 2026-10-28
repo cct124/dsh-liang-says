@@ -166,14 +166,28 @@ test('mixed fragments preserve punctuation and Latin words', () => {
   assert.ok(fragments.every(part => !/^[，。！？；：、]/u.test(part)));
 });
 
-test('the shipped catalog has exactly three fields and every quote maps to supplied source text', () => {
+test('the shipped catalog has three fields and each entry has traceable editorial provenance', () => {
   const catalog = JSON.parse(readFileSync(new URL('../asset/quotes/quotes.json', import.meta.url), 'utf8'));
   const source = readFileSync(new URL('../asset/quotes/liang-wenfeng-public-statements.md', import.meta.url), 'utf8');
+  const provenance = JSON.parse(readFileSync(new URL('../asset/quotes/quote-sources.json', import.meta.url), 'utf8'));
+  const review = JSON.parse(readFileSync(new URL('../asset/quotes/editorial-review.json', import.meta.url), 'utf8'));
   const picker = new QuotePicker(catalog);
-  assert.equal(picker.quotes.length, 212);
+  assert.equal(picker.quotes.length, provenance.review.currentCount);
   for (const quote of picker.quotes) {
     assert.deepEqual(Object.keys(quote).sort(), ['classicScore', 'id', 'text']);
-    assert.ok(source.replaceAll('**', '').includes(quote.text));
+    const editorial = provenance.review.entries[quote.id];
+    assert.ok(editorial && provenance.entries[quote.id]?.length);
+    if (editorial.kind === 'excerpt') assert.ok(source.replaceAll('**', '').includes(quote.text));
+    else if (editorial.kind === 'combined-excerpt') {
+      const originals = provenance.entries[quote.id].map((location: { line: number }) =>
+        source.split(/\r?\n/)[location.line - 1]!.match(/^> “(.+)”\s*$/)![1]!.replaceAll('**', ''));
+      assert.equal(quote.text, originals.join('……'));
+    } else if (editorial.kind === 'edited-excerpt') {
+      assert.ok(review.revisions.some((revision: { text?: string }) => revision.text === quote.text));
+    } else {
+      assert.equal(editorial.kind, 'summary');
+      assert.ok(review.supplements.some((summary: { text: string }) => summary.text === quote.text));
+    }
     assert.equal(splitQuote(quote.text).join(''), quote.text);
     assert.ok(splitQuote(quote.text).length < 80);
   }

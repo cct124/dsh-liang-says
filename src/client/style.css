@@ -66,6 +66,7 @@
 .lx-library td { padding: 8px 7px; vertical-align: top; border-top: 1px solid var(--lx-border); font-variant-numeric: tabular-nums; }
 .lx-library td button { border: 0; padding: 0; color: inherit; background: transparent; text-align: left; font-size: 11px; line-height: 1.7; }
 .lx-library td button:hover { text-decoration: underline; }
+.lx-library-context { display: block; margin-top: 4px; color: var(--lx-muted); font-size: 10px; }
 .lx-error { color: var(--dsw-alias-text-danger, #bd403b); font-size: 12px; }
 @keyframes lx-pulse { 50% { opacity: .35; } }
 @container (max-height: 430px) {

@@ -20,6 +20,9 @@ export const zh = {
   score: '经典分', penalty: '出现分', chance: '下次概率',
   reduced: '减少动态效果', selected: '当前文选',
   source: '出处', excerpt: '流出实录整理', error: '预览错误', search: '搜索语录',
+  review: '本次核对', reviewSource: '每经报道', supported: '报道内容可对应（非逐字认证）',
+  partial: '部分内容可对应', 'not-covered': '本报道未收录，沿用原来源',
+  'outside-scope': '其他年份，未在本次外部核验', summary: '据报道整理观点',
   empty: '没有匹配的语录', minutes: '模拟已运行', closeCatalog: '收起语录库',
 };
 export const en: Record<keyof typeof zh, string> = {
@@ -44,6 +47,9 @@ export const en: Record<keyof typeof zh, string> = {
   score: 'Classic score', penalty: 'Cooldown', chance: 'Next probability',
   reduced: 'Reduce motion', selected: 'Current quote', source: 'Source', excerpt: 'Reported transcript',
   error: 'Preview error', search: 'Search quotes', empty: 'No matching quotes',
+  review: 'Review', reviewSource: 'NBD report', supported: 'Content supported, not verbatim certification',
+  partial: 'Partly supported', 'not-covered': 'Not covered; original sources retained',
+  'outside-scope': 'Other year; not externally checked in this review', summary: 'Editorial summary of the report',
   minutes: 'Simulation time', closeCatalog: 'Close library',
 };
 export type Translate = (key: keyof typeof zh) => string;

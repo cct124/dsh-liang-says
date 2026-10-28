@@ -1,10 +1,12 @@
-import { createHash } from 'node:crypto';
 import { readFile, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
+import { quoteId, reviewQuotes } from './review-quotes.mjs';
 
 const root = new URL('../', import.meta.url);
 const sourcePath = 'asset/quotes/liang-wenfeng-public-statements.md';
 const source = await readFile(new URL(sourcePath, root), 'utf8');
+const reviewPath = 'asset/quotes/editorial-review.json';
+const review = JSON.parse(await readFile(new URL(reviewPath, root), 'utf8'));
 const sections = {
   '3.1': { year: 2019, level: 'A/B', sources: ['S1'], score: 55 },
   '3.2': { year: 2019, level: 'B', sources: ['S2'], score: 50 },
@@ -97,8 +99,7 @@ for (const [index, line] of source.split(/\r?\n/).entries()) {
   const match = line.match(/^> “(.+)”\s*$/);
   if (!sections[section] || !match) continue;
   const text = match[1].replaceAll('**', '').trim();
-  const normalized = text.replace(/[\s\p{P}]/gu, '');
-  const id = 'liang-' + createHash('sha256').update(normalized).digest('hex').slice(0, 10);
+  const id = quoteId(text);
   const highlight = highlights.find(([prefix]) => text.startsWith(prefix));
   if (highlight) usedHighlights.add(highlight[0]);
   const info = sections[section];
@@ -111,15 +112,19 @@ for (const [index, line] of source.split(/\r?\n/).entries()) {
 }
 const unused = highlights.filter(([prefix]) => !usedHighlights.has(prefix));
 if (unused.length) throw new Error('Unmatched editorial prefixes: ' + unused.map(([prefix]) => prefix).join(', '));
-const all = [...entries.values()];
+const { quotes: all, withheld } = reviewQuotes([...entries.values()], review);
 const quotes = all.map(({ id, text, classicScore }) => ({ id, text, classicScore }));
 const sources = {
   sourceDocument: sourcePath,
-  note: '按用户提供的汇编原文结构化，未独立核验外部出处。可靠性标签沿用原文；B/C 条目为流出实录整理。经典分是编辑权重，不是可靠性评分。',
+  note: '保留用户提供的原始汇编，按校订记录生成展示内容。S13只标在本次报道可对应的条目上；supported指内容对应，非逐字一致。其他来源未在本次独立核验，可靠性标签沿用原汇编。summary为编辑概述，不能作为本人逐字原话引用。经典分是编辑权重。',
   excluded: ['核心十句与主题索引重复内容', '2025 年会议、采访等事实记述', '2026 年 9 月匿名消息源的媒体概括', '编者说明与误传示例'],
   entries: Object.fromEntries(all.map(({ id, locations }) => [id, locations])),
+  review: { document: reviewPath, reviewedAt: review.reviewedAt, source: review.source,
+    originalCount: entries.size, currentCount: quotes.length, withheld,
+    entries: Object.fromEntries(all.map(({ id, editorial }) => [id, editorial])) },
 };
-const output = [['asset/quotes/quotes.json', quotes], ['asset/quotes/quote-sources.json', sources]];
+const output = [['asset/quotes/quotes.json', quotes], ['asset/quotes/quote-sources.json', sources],
+  ['asset/quotes/quote-context.json', Object.fromEntries(all.map(({ id, display }) => [id, display]))]];
 for (const [filename, value] of output) {
   const content = JSON.stringify(value, null, 2) + '\n';
   const url = new URL(filename, root);

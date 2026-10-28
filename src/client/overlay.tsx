@@ -2,6 +2,7 @@ import * as React from 'react';
 import portrait from '../../asset/images/liangwenfeng01.png';
 import entranceRiser from '../../asset/sfx/06-cinematic-riser-full.mp3';
 import { splitQuote, type Quote } from '../core/quote-picker.ts';
+import { quotePresentation } from '../core/quote-presentation.ts';
 import type { QuoteRequest } from '../core/simulation.ts';
 import { createQuoteFrame, type QuoteFrame } from './quote-frame.ts';
 import { animateText } from './text-particles.ts';
@@ -128,6 +129,7 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
   }, [request, dismiss]);
 
   if (!quote) return null;
+  const presentation = quotePresentation(quote.id);
   return <div ref={root} className={'lx-overlay' + (reducedMotion ? ' lx-reduced' : '')}
     onClick={event => { event.stopPropagation(); dismiss(); }} role="region" aria-label="梁选文案">
     <audio ref={entranceAudio} src={entranceRiser} preload="auto" hidden />
@@ -158,7 +160,7 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
           <p className="lx-words" aria-label={quote.text}>
             {splitQuote(quote.text).map((text, index) => <span className="lx-fragment" data-fragment key={index} aria-hidden="true">{windGlyphs(text)}</span>)}
           </p>
-          <p className="lx-signature" data-fragment aria-label="—— 梁文峰">{windGlyphs('—— 梁文峰')}</p>
+          <p className="lx-signature" data-fragment aria-label={presentation.signature}>{windGlyphs(presentation.signature)}</p>
         </div>
       </div>
     </div>

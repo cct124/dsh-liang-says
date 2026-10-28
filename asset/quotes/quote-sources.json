@@ -1,6 +1,6 @@
 {
   "sourceDocument": "asset/quotes/liang-wenfeng-public-statements.md",
-  "note": "按用户提供的汇编原文结构化，未独立核验外部出处。可靠性标签沿用原文；B/C 条目为流出实录整理。经典分是编辑权重，不是可靠性评分。",
+  "note": "保留用户提供的原始汇编，按校订记录生成展示内容。S13只标在本次报道可对应的条目上；supported指内容对应，非逐字一致。其他来源未在本次独立核验，可靠性标签沿用原汇编。summary为编辑概述，不能作为本人逐字原话引用。经典分是编辑权重。",
   "excluded": [
     "核心十句与主题索引重复内容",
     "2025 年会议、采访等事实记述",
@@ -92,7 +92,7 @@
         ]
       }
     ],
-    "liang-3b21dd6c62": [
+    "liang-5d73e6e420": [
       {
         "line": 154,
         "section": "3.1",
@@ -102,9 +102,7 @@
         "sourceIds": [
           "S1"
         ]
-      }
-    ],
-    "liang-b88d70eec0": [
+      },
       {
         "line": 156,
         "section": "3.1",
@@ -152,7 +150,7 @@
         ]
       }
     ],
-    "liang-248cabc21b": [
+    "liang-456b3215e6": [
       {
         "line": 166,
         "section": "3.1",
@@ -162,9 +160,7 @@
         "sourceIds": [
           "S1"
         ]
-      }
-    ],
-    "liang-790b04da5c": [
+      },
       {
         "line": 168,
         "section": "3.1",
@@ -440,7 +436,7 @@
         ]
       }
     ],
-    "liang-3bfa1f8adf": [
+    "liang-d5d28ad6ca": [
       {
         "line": 243,
         "section": "4.1",
@@ -450,9 +446,7 @@
         "sourceIds": [
           "S4"
         ]
-      }
-    ],
-    "liang-9e9031e92c": [
+      },
       {
         "line": 245,
         "section": "4.1",
@@ -462,9 +456,7 @@
         "sourceIds": [
           "S4"
         ]
-      }
-    ],
-    "liang-abe3c954fd": [
+      },
       {
         "line": 247,
         "section": "4.1",
@@ -632,7 +624,7 @@
         ]
       }
     ],
-    "liang-4b7199bc93": [
+    "liang-a3a4a785e1": [
       {
         "line": 281,
         "section": "4.1",
@@ -642,9 +634,7 @@
         "sourceIds": [
           "S4"
         ]
-      }
-    ],
-    "liang-142e15c920": [
+      },
       {
         "line": 283,
         "section": "4.1",
@@ -1280,7 +1270,7 @@
         ]
       }
     ],
-    "liang-22361bf71a": [
+    "liang-654be66b00": [
       {
         "line": 414,
         "section": "5.1",
@@ -1290,9 +1280,7 @@
         "sourceIds": [
           "S5"
         ]
-      }
-    ],
-    "liang-2df1086176": [
+      },
       {
         "line": 416,
         "section": "5.1",
@@ -1304,7 +1292,7 @@
         ]
       }
     ],
-    "liang-a5a21c24fd": [
+    "liang-f6f1d46e52": [
       {
         "line": 474,
         "section": "7.1",
@@ -1315,12 +1303,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-b06211d73a": [
+      },
       {
         "line": 476,
         "section": "7.1",
@@ -1331,7 +1316,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1347,12 +1331,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-ac52e4c239": [
+    "liang-b13f8313bf": [
       {
         "line": 480,
         "section": "7.1",
@@ -1363,7 +1346,19 @@
           "S10",
           "S11",
           "S12",
-          "S13",
+          "S14"
+        ]
+      },
+      {
+        "line": 484,
+        "section": "7.1",
+        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
           "S14"
         ]
       }
@@ -1379,23 +1374,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-05d30ab5dd": [
-      {
-        "line": 484,
-        "section": "7.1",
-        "topic": "7.1.1 初衷与愿景：不是奔着上市和赚钱来的",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1411,12 +1389,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-ea8be4aac8": [
+    "liang-ff0e188dca": [
       {
         "line": 488,
         "section": "7.1",
@@ -1427,12 +1404,24 @@
           "S10",
           "S11",
           "S12",
-          "S13",
+          "S14"
+        ]
+      },
+      {
+        "line": 628,
+        "section": "7.1",
+        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
           "S14"
         ]
       }
     ],
-    "liang-6036fa10c9": [
+    "liang-807c0bdef2": [
       {
         "line": 492,
         "section": "7.1",
@@ -1443,12 +1432,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-4517e56263": [
+      },
       {
         "line": 494,
         "section": "7.1",
@@ -1459,28 +1445,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-dc153bf0b5": [
-      {
-        "line": 496,
-        "section": "7.1",
-        "topic": "7.1.2 克制是一种战略",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-8e8cd66baf": [
+    "liang-a7382f3c2d": [
       {
         "line": 498,
         "section": "7.1",
@@ -1491,12 +1461,25 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
+        ]
+      },
+      {
+        "line": 496,
+        "section": "7.1",
+        "topic": "7.1.2 克制是一种战略",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-b9d86dcca2": [
+    "liang-41eec5050b": [
       {
         "line": 500,
         "section": "7.1",
@@ -1507,12 +1490,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-904c381a8a": [
+      },
       {
         "line": 502,
         "section": "7.1",
@@ -1523,8 +1504,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1539,7 +1520,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1555,7 +1535,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1571,7 +1550,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1587,7 +1565,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1603,7 +1580,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1619,7 +1595,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1635,7 +1610,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1651,8 +1625,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1667,7 +1641,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1683,8 +1656,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1699,7 +1672,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1715,7 +1687,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1731,12 +1702,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-cc029e51a0": [
+    "liang-6828405e50": [
       {
         "line": 534,
         "section": "7.1",
@@ -1747,12 +1717,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-6547d22af1": [
+      },
       {
         "line": 536,
         "section": "7.1",
@@ -1763,12 +1731,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-9cc99f987c": [
+    "liang-13a3c82573": [
       {
         "line": 538,
         "section": "7.1",
@@ -1779,28 +1747,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-91af49776b": [
-      {
-        "line": 540,
-        "section": "7.1",
-        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-db6e8a9759": [
+      },
       {
         "line": 542,
         "section": "7.1",
@@ -1811,7 +1761,20 @@
           "S10",
           "S11",
           "S12",
-          "S13",
+          "S14",
+          "S13"
+        ]
+      },
+      {
+        "line": 540,
+        "section": "7.1",
+        "topic": "7.1.4 AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
           "S14"
         ]
       }
@@ -1827,7 +1790,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1843,7 +1805,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1859,8 +1820,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1875,8 +1836,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1891,7 +1852,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -1907,12 +1867,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-31b2ba2ea9": [
+    "liang-fc3d246867": [
       {
         "line": 560,
         "section": "7.1",
@@ -1923,12 +1882,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-e3427b8ebd": [
+      },
       {
         "line": 562,
         "section": "7.1",
@@ -1939,12 +1896,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-96cdfecd2a": [
+      },
       {
         "line": 564,
         "section": "7.1",
@@ -1955,8 +1910,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1971,8 +1926,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -1987,12 +1942,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-0fd8e8e38e": [
+    "liang-ec8f5a6e7d": [
       {
         "line": 572,
         "section": "7.1",
@@ -2003,12 +1958,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-ec3a8c6a0e": [
+      },
       {
         "line": 574,
         "section": "7.1",
@@ -2019,7 +1971,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2035,8 +1986,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2051,12 +2002,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-46ba770a86": [
+    "liang-373755df34": [
       {
         "line": 580,
         "section": "7.1",
@@ -2067,12 +2017,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-ea33258c84": [
+      },
       {
         "line": 582,
         "section": "7.1",
@@ -2083,12 +2031,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-90875afbb1": [
+      },
       {
         "line": 584,
         "section": "7.1",
@@ -2099,12 +2045,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-9a0de44dad": [
+    "liang-08f955ea7e": [
       {
         "line": 586,
         "section": "7.1",
@@ -2115,12 +2061,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-4c104b2f3e": [
+      },
       {
         "line": 588,
         "section": "7.1",
@@ -2131,8 +2075,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2147,7 +2091,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2163,7 +2106,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2179,23 +2121,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-23cecc9a0e": [
-      {
-        "line": 596,
-        "section": "7.1",
-        "topic": "7.1.6 算力、芯片与中美差距",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2211,7 +2136,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2227,23 +2151,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-00507eb5d8": [
-      {
-        "line": 602,
-        "section": "7.1",
-        "topic": "7.1.6 算力、芯片与中美差距",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2259,8 +2166,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2275,12 +2182,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-9fd7b8bef8": [
+    "liang-cf0c85bd32": [
       {
         "line": 610,
         "section": "7.1",
@@ -2291,12 +2198,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-ea23bd9290": [
+      },
       {
         "line": 612,
         "section": "7.1",
@@ -2307,7 +2211,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2323,7 +2226,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2339,12 +2241,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-ce1f5f8e72": [
+    "liang-790e2affac": [
       {
         "line": 618,
         "section": "7.1",
@@ -2355,12 +2256,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-2954a2c4dd": [
+      },
       {
         "line": 620,
         "section": "7.1",
@@ -2371,12 +2269,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-509c0ef9fd": [
+      },
       {
         "line": 622,
         "section": "7.1",
@@ -2387,7 +2282,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2403,39 +2297,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-eb1ba92fe8": [
-      {
-        "line": 626,
-        "section": "7.1",
-        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-c889c4fa8a": [
-      {
-        "line": 628,
-        "section": "7.1",
-        "topic": "7.1.7 团队、组织与人才：唯一不可退让的核心利益",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2451,7 +2312,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2467,12 +2327,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-bdf4c896ba": [
+    "liang-44d6ec67a0": [
       {
         "line": 636,
         "section": "7.1",
@@ -2483,12 +2342,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-2110cee3c4": [
+    "liang-66e1e8d258": [
       {
         "line": 638,
         "section": "7.1",
@@ -2499,12 +2358,10 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
-      }
-    ],
-    "liang-1806dd5183": [
+      },
       {
         "line": 640,
         "section": "7.1",
@@ -2515,12 +2372,12 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
-    "liang-928c37e5d3": [
+    "liang-f9edac854c": [
       {
         "line": 642,
         "section": "7.1",
@@ -2531,8 +2388,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2547,12 +2404,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-d450f1f1ee": [
+    "liang-af45f79caa": [
       {
         "line": 646,
         "section": "7.1",
@@ -2563,12 +2419,9 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
-      }
-    ],
-    "liang-3e7e4987ca": [
+      },
       {
         "line": 648,
         "section": "7.1",
@@ -2579,23 +2432,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-5af282fc6c": [
-      {
-        "line": 650,
-        "section": "7.1",
-        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2611,7 +2447,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2627,7 +2462,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2643,8 +2477,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2659,7 +2493,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2675,8 +2508,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2691,8 +2524,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2707,7 +2540,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2723,7 +2555,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2739,7 +2570,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2755,12 +2585,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-6966ca2066": [
+    "liang-7c8fd5a491": [
       {
         "line": 674,
         "section": "7.1",
@@ -2771,8 +2600,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2787,7 +2616,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2803,12 +2631,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-9d922a5c64": [
+    "liang-6c5589a47b": [
       {
         "line": 682,
         "section": "7.1",
@@ -2819,8 +2646,22 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
+        ]
+      },
+      {
+        "line": 650,
+        "section": "7.1",
+        "topic": "7.1.8 竞争与终局：不追求暴利，不树敌",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2835,12 +2676,11 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
     ],
-    "liang-44926fe5c3": [
+    "liang-bf952c1ee0": [
       {
         "line": 686,
         "section": "7.1",
@@ -2851,8 +2691,22 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
+        ]
+      },
+      {
+        "line": 602,
+        "section": "7.1",
+        "topic": "7.1.6 算力、芯片与中美差距",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S10",
+          "S11",
+          "S12",
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2867,7 +2721,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2883,23 +2736,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
-        ]
-      }
-    ],
-    "liang-69cbf01ebd": [
-      {
-        "line": 694,
-        "section": "7.1",
-        "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
-        "year": 2026,
-        "reliability": "B/C",
-        "sourceIds": [
-          "S10",
-          "S11",
-          "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2915,7 +2751,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2931,7 +2766,6 @@
           "S10",
           "S11",
           "S12",
-          "S13",
           "S14"
         ]
       }
@@ -2947,8 +2781,8 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
         ]
       }
     ],
@@ -2963,10 +2797,2744 @@
           "S10",
           "S11",
           "S12",
-          "S13",
-          "S14"
+          "S14",
+          "S13"
+        ]
+      }
+    ],
+    "liang-ab418d964c": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 0,
+        "topic": "低成本的两层意义",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-ee808137b4": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 1,
+        "topic": "下一代模型与当前改进",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-07b13577bb": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 2,
+        "topic": "AI超越人类知识的范围",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-54c29470c5": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 3,
+        "topic": "追赶目标的限制条件",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-ab184f7b87": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 4,
+        "topic": "研发目标与经营保底",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-da7b0238fe": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 5,
+        "topic": "对全球AI分工的推测",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-d4af2cf5ad": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 6,
+        "topic": "当时API定价的需求判断",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
+        ]
+      }
+    ],
+    "liang-a67426e1bf": [
+      {
+        "document": "asset/quotes/editorial-review.json",
+        "section": "supplements",
+        "item": 7,
+        "topic": "大模型的资源门槛",
+        "year": 2026,
+        "reliability": "B/C",
+        "sourceIds": [
+          "S13"
         ]
       }
     ]
+  },
+  "review": {
+    "document": "asset/quotes/editorial-review.json",
+    "reviewedAt": "2026-10-28",
+    "source": {
+      "id": "S13",
+      "title": "7300字干货版丨梁文锋3小时44分钟闭门会聊了什么？",
+      "url": "https://www.nbd.com.cn/articles/2026-07-23/4504599.html",
+      "publishedAt": "2026-07-23",
+      "eventDate": "2026-05",
+      "note": "每经记者据交流实录整理，报道确认会议月份，未确认具体日。内容对应不等于逐字一致，也不等于本人授权公开。未收录的其他来源内容不据此判假。"
+    },
+    "originalCount": 212,
+    "currentCount": 189,
+    "withheld": [
+      {
+        "id": "liang-23cecc9a0e",
+        "text": "我觉得在这一点上，英伟达是在掘自己的坟墓。",
+        "reason": "这一点的确切指代无法从本次报道确认，退出轮播，保留原汇编。",
+        "locations": [
+          {
+            "line": 596,
+            "section": "7.1",
+            "topic": "7.1.6 算力、芯片与中美差距",
+            "year": 2026,
+            "reliability": "B/C",
+            "sourceIds": [
+              "S10",
+              "S11",
+              "S12",
+              "S13",
+              "S14"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "liang-69cbf01ebd",
+        "text": "四张华为卡顶一张英伟达的卡。",
+        "reason": "缺少卡型、工作负载及比较条件，本次报道未核实；不作为独立技术结论展示。",
+        "locations": [
+          {
+            "line": 694,
+            "section": "7.1",
+            "topic": "7.1.11 补充：芯片、竞争与人才的其他判断",
+            "year": 2026,
+            "reliability": "B/C",
+            "sourceIds": [
+              "S10",
+              "S11",
+              "S12",
+              "S13",
+              "S14"
+            ]
+          }
+        ]
+      }
+    ],
+    "entries": {
+      "liang-8d62c29df4": {
+        "kind": "excerpt",
+        "context": "论量化与规模",
+        "originalIds": [
+          "liang-8d62c29df4"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-5077ac1c0b": {
+        "kind": "excerpt",
+        "context": "论量化与规模",
+        "originalIds": [
+          "liang-5077ac1c0b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-003693da7d": {
+        "kind": "excerpt",
+        "context": "论量化与规模",
+        "originalIds": [
+          "liang-003693da7d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-bf0b996d72": {
+        "kind": "excerpt",
+        "context": "论量化投资的本质",
+        "originalIds": [
+          "liang-bf0b996d72"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-fdd2505a40": {
+        "kind": "excerpt",
+        "context": "论量化投资的本质",
+        "originalIds": [
+          "liang-fdd2505a40"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-b4448bc693": {
+        "kind": "excerpt",
+        "context": "论量化投资的本质",
+        "originalIds": [
+          "liang-b4448bc693"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-bd32b0872c": {
+        "kind": "excerpt",
+        "context": "论量化投资的本质",
+        "originalIds": [
+          "liang-bd32b0872c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-5d73e6e420": {
+        "kind": "combined-excerpt",
+        "context": "量化收益的来源",
+        "originalIds": [
+          "liang-3b21dd6c62",
+          "liang-b88d70eec0"
+        ],
+        "reason": "合并追问与回答，避免具体一点失去指代。",
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-a02e0594d5": {
+        "kind": "excerpt",
+        "context": "论收益来源与市场有效性",
+        "originalIds": [
+          "liang-a02e0594d5"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-a2a053a42a": {
+        "kind": "excerpt",
+        "context": "论收益来源与市场有效性",
+        "originalIds": [
+          "liang-a2a053a42a"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-3a33e649ee": {
+        "kind": "excerpt",
+        "context": "论未来：多策略与基本面量化",
+        "originalIds": [
+          "liang-3a33e649ee"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-456b3215e6": {
+        "kind": "combined-excerpt",
+        "context": "基本面量化的前景",
+        "originalIds": [
+          "liang-248cabc21b",
+          "liang-790b04da5c"
+        ],
+        "reason": "补全这个使命的指代。",
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-a7d1ed4ced": {
+        "kind": "excerpt",
+        "context": "论对冲基金的边界",
+        "originalIds": [
+          "liang-a7d1ed4ced"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-41699420c1": {
+        "kind": "excerpt",
+        "context": "论对冲基金的边界",
+        "originalIds": [
+          "liang-41699420c1"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-3fecc80125": {
+        "kind": "excerpt",
+        "context": "论对冲基金的边界",
+        "originalIds": [
+          "liang-3fecc80125"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-9ead727a34": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-9ead727a34"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-aa9c90d6b3": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-aa9c90d6b3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-00db66b16f": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-00db66b16f"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-17710ed3fe": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-17710ed3fe"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-ec086a97a2": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-ec086a97a2"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7056eb0a6b": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-7056eb0a6b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-8b10a0a291": {
+        "kind": "excerpt",
+        "context": "《中国证券报》专访：万亿级量化私募可期",
+        "originalIds": [
+          "liang-8b10a0a291"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-900f6b3c5b": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-900f6b3c5b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-83ae2fb40a": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-83ae2fb40a"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-1b54290f3c": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-1b54290f3c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-1052505ed0": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-1052505ed0"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-32d3e336ce": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-32d3e336ce"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-b6e5714183": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-b6e5714183"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-83569e6725": {
+        "kind": "excerpt",
+        "context": "《征服市场的人：西蒙斯传》推荐序：创造理解市场的模型",
+        "originalIds": [
+          "liang-83569e6725"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-4d6519d671": {
+        "kind": "excerpt",
+        "context": "为什么做大模型",
+        "originalIds": [
+          "liang-4d6519d671"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-bc2235391f": {
+        "kind": "excerpt",
+        "context": "为什么做大模型",
+        "originalIds": [
+          "liang-bc2235391f"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-6c4607a555": {
+        "kind": "excerpt",
+        "context": "为什么做大模型",
+        "originalIds": [
+          "liang-6c4607a555"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-ef67708827": {
+        "kind": "excerpt",
+        "context": "做研究，不做垂类和应用",
+        "originalIds": [
+          "liang-ef67708827"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-74809a6674": {
+        "kind": "excerpt",
+        "context": "做研究，不做垂类和应用",
+        "originalIds": [
+          "liang-74809a6674"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-d5d28ad6ca": {
+        "kind": "combined-excerpt",
+        "context": "基础研究的动机与回报",
+        "originalIds": [
+          "liang-3bfa1f8adf",
+          "liang-9e9031e92c",
+          "liang-abe3c954fd"
+        ],
+        "reason": "把商业理由和基础研究的对象放回同一段。",
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-6966eeb02c": {
+        "kind": "excerpt",
+        "context": "算力、钱与“钢琴”",
+        "originalIds": [
+          "liang-6966eeb02c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-30c1794f20": {
+        "kind": "excerpt",
+        "context": "算力、钱与“钢琴”",
+        "originalIds": [
+          "liang-30c1794f20"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-918e3d4a95": {
+        "kind": "excerpt",
+        "context": "算力、钱与“钢琴”",
+        "originalIds": [
+          "liang-918e3d4a95"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-c92a1fa9d3": {
+        "kind": "excerpt",
+        "context": "算力、钱与“钢琴”",
+        "originalIds": [
+          "liang-c92a1fa9d3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-0f78e14efb": {
+        "kind": "excerpt",
+        "context": "算力、钱与“钢琴”",
+        "originalIds": [
+          "liang-0f78e14efb"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7faf6f446b": {
+        "kind": "excerpt",
+        "context": "算力、钱与“钢琴”",
+        "originalIds": [
+          "liang-7faf6f446b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-3ab159f234": {
+        "kind": "excerpt",
+        "context": "大厂、竞争与“信仰者”",
+        "originalIds": [
+          "liang-3ab159f234"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-97d98da6f8": {
+        "kind": "excerpt",
+        "context": "大厂、竞争与“信仰者”",
+        "originalIds": [
+          "liang-97d98da6f8"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7b46e11d49": {
+        "kind": "excerpt",
+        "context": "大厂、竞争与“信仰者”",
+        "originalIds": [
+          "liang-7b46e11d49"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-26be21a6be": {
+        "kind": "excerpt",
+        "context": "经验、人才与组织",
+        "originalIds": [
+          "liang-26be21a6be"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-e1080373e4": {
+        "kind": "excerpt",
+        "context": "经验、人才与组织",
+        "originalIds": [
+          "liang-e1080373e4"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-f61b34b81a": {
+        "kind": "excerpt",
+        "context": "经验、人才与组织",
+        "originalIds": [
+          "liang-f61b34b81a"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-d94a709359": {
+        "kind": "excerpt",
+        "context": "经验、人才与组织",
+        "originalIds": [
+          "liang-d94a709359"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-a3a4a785e1": {
+        "kind": "combined-excerpt",
+        "context": "研究团队的工作方式",
+        "originalIds": [
+          "liang-4b7199bc93",
+          "liang-142e15c920"
+        ],
+        "reason": "避免没有任务被理解为不承担工作。",
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-8ec6bf2854": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-8ec6bf2854"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-0951378ad1": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-0951378ad1"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-582267d3cc": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-582267d3cc"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-cc36043fbb": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-cc36043fbb"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-14a74de573": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-14a74de573"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-a7eaa017aa": {
+        "kind": "excerpt",
+        "context": "研究人才的选人标准",
+        "originalIds": [
+          "liang-a7eaa017aa"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-c532cb08ae": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-c532cb08ae"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-28ec9fb209": {
+        "kind": "excerpt",
+        "context": "创新、疯狂与年轻人",
+        "originalIds": [
+          "liang-28ec9fb209"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-0f36c51013": {
+        "kind": "excerpt",
+        "context": "价格战与定价原则",
+        "originalIds": [
+          "liang-0f36c51013"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-ed4c875e5e": {
+        "kind": "excerpt",
+        "context": "价格战与定价原则",
+        "originalIds": [
+          "liang-ed4c875e5e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-2e6ca084dd": {
+        "kind": "excerpt",
+        "context": "价格战与定价原则",
+        "originalIds": [
+          "liang-2e6ca084dd"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-0b58b95a43": {
+        "kind": "excerpt",
+        "context": "价格战与定价原则",
+        "originalIds": [
+          "liang-0b58b95a43"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-802aa43539": {
+        "kind": "excerpt",
+        "context": "价格战与定价原则",
+        "originalIds": [
+          "liang-802aa43539"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-c387afd981": {
+        "kind": "excerpt",
+        "context": "价格战与定价原则",
+        "originalIds": [
+          "liang-c387afd981"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-193b18fab3": {
+        "kind": "excerpt",
+        "context": "原创与模仿",
+        "originalIds": [
+          "liang-193b18fab3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-2c6af4b718": {
+        "kind": "excerpt",
+        "context": "原创与模仿",
+        "originalIds": [
+          "liang-2c6af4b718"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-eb8e37ccc0": {
+        "kind": "excerpt",
+        "context": "原创与模仿",
+        "originalIds": [
+          "liang-eb8e37ccc0"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7f8f4fb5a5": {
+        "kind": "excerpt",
+        "context": "对中国公司参与模型创新的评价",
+        "originalIds": [
+          "liang-7f8f4fb5a5"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-faff163ca7": {
+        "kind": "excerpt",
+        "context": "原创与模仿",
+        "originalIds": [
+          "liang-faff163ca7"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-3e3a74bfc9": {
+        "kind": "excerpt",
+        "context": "原创与模仿",
+        "originalIds": [
+          "liang-3e3a74bfc9"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-59ad9a922d": {
+        "kind": "excerpt",
+        "context": "开源与护城河",
+        "originalIds": [
+          "liang-59ad9a922d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-bbc5824b21": {
+        "kind": "excerpt",
+        "context": "开源与护城河",
+        "originalIds": [
+          "liang-bbc5824b21"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-42d552109e": {
+        "kind": "excerpt",
+        "context": "开源与护城河",
+        "originalIds": [
+          "liang-42d552109e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-e25f651301": {
+        "kind": "excerpt",
+        "context": "开源与护城河",
+        "originalIds": [
+          "liang-e25f651301"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-66cca35b4c": {
+        "kind": "excerpt",
+        "context": "开源与护城河",
+        "originalIds": [
+          "liang-66cca35b4c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7d430ab6aa": {
+        "kind": "excerpt",
+        "context": "中国 AI 的位置",
+        "originalIds": [
+          "liang-7d430ab6aa"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-50c4be72ec": {
+        "kind": "excerpt",
+        "context": "中国 AI 的位置",
+        "originalIds": [
+          "liang-50c4be72ec"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-524b41d3ae": {
+        "kind": "excerpt",
+        "context": "中国 AI 的位置",
+        "originalIds": [
+          "liang-524b41d3ae"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-4b292b08e4": {
+        "kind": "excerpt",
+        "context": "中国 AI 的位置",
+        "originalIds": [
+          "liang-4b292b08e4"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-96af5e438c": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-96af5e438c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-59b9ac9fda": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-59b9ac9fda"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-71d33606ee": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-71d33606ee"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-91384c8645": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-91384c8645"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-caa412df6e": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-caa412df6e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7e29aafbbb": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-7e29aafbbb"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-5eaa691f73": {
+        "kind": "excerpt",
+        "context": "融资、芯片与竞争",
+        "originalIds": [
+          "liang-5eaa691f73"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-18a85cfe28": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-18a85cfe28"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-1bdd5e162e": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-1bdd5e162e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-82bde807df": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-82bde807df"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-4e61ee50a3": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-4e61ee50a3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-5cbf54010a": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-5cbf54010a"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-f40d982ddc": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-f40d982ddc"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-28c3d238fc": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-28c3d238fc"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-2cd55cd780": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-2cd55cd780"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-27083956b5": {
+        "kind": "excerpt",
+        "context": "人与组织",
+        "originalIds": [
+          "liang-27083956b5"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-99284ae7b1": {
+        "kind": "excerpt",
+        "context": "AGI 路线与终局",
+        "originalIds": [
+          "liang-99284ae7b1"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-0e3acd7b25": {
+        "kind": "excerpt",
+        "context": "2024年对AGI时间的推测",
+        "originalIds": [
+          "liang-0e3acd7b25"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-78328da80d": {
+        "kind": "excerpt",
+        "context": "AGI 路线与终局",
+        "originalIds": [
+          "liang-78328da80d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7590dae74d": {
+        "kind": "excerpt",
+        "context": "AGI 路线与终局",
+        "originalIds": [
+          "liang-7590dae74d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-4245267ee6": {
+        "kind": "excerpt",
+        "context": "2024年回顾团队的研究积累",
+        "originalIds": [
+          "liang-4245267ee6"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-f213cfb12d": {
+        "kind": "excerpt",
+        "context": "AGI 路线与终局",
+        "originalIds": [
+          "liang-f213cfb12d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-a7a3bebbf6": {
+        "kind": "excerpt",
+        "context": "AGI 路线与终局",
+        "originalIds": [
+          "liang-a7a3bebbf6"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-654be66b00": {
+        "kind": "combined-excerpt",
+        "context": "社会如何认识硬核创新",
+        "originalIds": [
+          "liang-22361bf71a",
+          "liang-2df1086176"
+        ],
+        "reason": "补齐事实和过程所指的社会认知变化。",
+        "verification": {
+          "status": "outside-scope",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-f6f1d46e52": {
+        "kind": "combined-excerpt",
+        "context": "创办公司的初衷",
+        "originalIds": [
+          "liang-a5a21c24fd",
+          "liang-b06211d73a"
+        ],
+        "reason": "补全这么想指赚钱与上市。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-facd4d93a4": {
+        "kind": "excerpt",
+        "context": "初衷与愿景：不是奔着上市和赚钱来的",
+        "originalIds": [
+          "liang-facd4d93a4"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-b13f8313bf": {
+        "kind": "combined-excerpt",
+        "context": "以行动体现愿景",
+        "originalIds": [
+          "liang-ac52e4c239",
+          "liang-05d30ab5dd"
+        ],
+        "reason": "说明没有成文愿景不等于没有共同目标。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-397ed19c71": {
+        "kind": "excerpt",
+        "context": "初衷与愿景：不是奔着上市和赚钱来的",
+        "originalIds": [
+          "liang-397ed19c71"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-ffa7627331": {
+        "kind": "excerpt",
+        "context": "初衷与愿景：不是奔着上市和赚钱来的",
+        "originalIds": [
+          "liang-ffa7627331"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-ff0e188dca": {
+        "kind": "combined-excerpt",
+        "context": "内部决策如何形成共识",
+        "originalIds": [
+          "liang-ea8be4aac8",
+          "liang-c889c4fa8a"
+        ],
+        "reason": "合并决策解释，并移除已包含在长句中的重复短句。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": [
+          "liang-eb1ba92fe8"
+        ]
+      },
+      "liang-807c0bdef2": {
+        "kind": "combined-excerpt",
+        "context": "为AGI取舍资源的战略判断",
+        "originalIds": [
+          "liang-6036fa10c9",
+          "liang-4517e56263"
+        ],
+        "reason": "将口号与战略取舍的解释合并；首句仍来自原汇编其他版本。",
+        "verification": {
+          "status": "partial",
+          "sourceId": "S13",
+          "locators": [
+            "专题1：克制"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-a7382f3c2d": {
+        "kind": "combined-excerpt",
+        "context": "AI收益分享的愿景与推测",
+        "originalIds": [
+          "liang-8e8cd66baf",
+          "liang-dc153bf0b5"
+        ],
+        "reason": "补全独占的对象；GDP比例为原汇编中的推测，本次报道未收录。",
+        "verification": {
+          "status": "partial",
+          "sourceId": "S13",
+          "locators": [
+            "专题1：克制"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-41eec5050b": {
+        "kind": "combined-excerpt",
+        "context": "当时的API定价与设备回本标准",
+        "originalIds": [
+          "liang-b9d86dcca2",
+          "liang-904c381a8a"
+        ],
+        "reason": "把利润判断与设备回本、价格区间条件合并。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题2：开源与定价"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-ef3baabd89": {
+        "kind": "excerpt",
+        "context": "回顾当时的API降价，非当前报价",
+        "originalIds": [
+          "liang-ef3baabd89"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-4dfd42f6ab": {
+        "kind": "excerpt",
+        "context": "克制是一种战略",
+        "originalIds": [
+          "liang-4dfd42f6ab"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-4624565c88": {
+        "kind": "excerpt",
+        "context": "克制是一种战略",
+        "originalIds": [
+          "liang-4624565c88"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-553a1327ae": {
+        "kind": "excerpt",
+        "context": "克制是一种战略",
+        "originalIds": [
+          "liang-553a1327ae"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-83557c2d5c": {
+        "kind": "excerpt",
+        "context": "克制是一种战略",
+        "originalIds": [
+          "liang-83557c2d5c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-8f84a6b762": {
+        "kind": "excerpt",
+        "context": "克制是一种战略",
+        "originalIds": [
+          "liang-8f84a6b762"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-f709cae29b": {
+        "kind": "excerpt",
+        "context": "开源：不是情怀，是算过的账",
+        "originalIds": [
+          "liang-f709cae29b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-8998d4ff2c": {
+        "kind": "excerpt",
+        "context": "开源：不是情怀，是算过的账",
+        "originalIds": [
+          "liang-8998d4ff2c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题2：开源与定价"
+          ]
+        }
+      },
+      "liang-82db1ae951": {
+        "kind": "excerpt",
+        "context": "开源：不是情怀，是算过的账",
+        "originalIds": [
+          "liang-82db1ae951"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-688ab16d5b": {
+        "kind": "excerpt",
+        "context": "以十个月设备回本为前提的开源定价",
+        "originalIds": [
+          "liang-688ab16d5b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题2：开源与定价"
+          ]
+        }
+      },
+      "liang-1d2ddd51d3": {
+        "kind": "excerpt",
+        "context": "开源：不是情怀，是算过的账",
+        "originalIds": [
+          "liang-1d2ddd51d3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-33813f9a2f": {
+        "kind": "excerpt",
+        "context": "开源：不是情怀，是算过的账",
+        "originalIds": [
+          "liang-33813f9a2f"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-390dde0671": {
+        "kind": "excerpt",
+        "context": "开源：不是情怀，是算过的账",
+        "originalIds": [
+          "liang-390dde0671"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-6828405e50": {
+        "kind": "combined-excerpt",
+        "context": "2026年时对AI发展阶段的判断",
+        "originalIds": [
+          "liang-cc029e51a0",
+          "liang-6547d22af1"
+        ],
+        "reason": "避免今年、去年和Agent之后脱离讲话年份。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题4：阶梯与路线推测"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-13a3c82573": {
+        "kind": "combined-excerpt",
+        "context": "AGI路线推测，不是确定时间表",
+        "originalIds": [
+          "liang-9cc99f987c",
+          "liang-db6e8a9759",
+          "liang-91af49776b"
+        ],
+        "reason": "将奇点放回学习、自我迭代及具身的路线讨论，保留可能与渐进限定。",
+        "verification": {
+          "status": "partial",
+          "sourceId": "S13",
+          "locators": [
+            "专题4：阶梯与路线推测"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-9e19a3647e": {
+        "kind": "excerpt",
+        "context": "AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "originalIds": [
+          "liang-9e19a3647e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-ec75605929": {
+        "kind": "excerpt",
+        "context": "AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "originalIds": [
+          "liang-ec75605929"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-b3a05612bf": {
+        "kind": "excerpt",
+        "context": "AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "originalIds": [
+          "liang-b3a05612bf"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题8、焦点六：持续学习"
+          ]
+        }
+      },
+      "liang-75ccf7750c": {
+        "kind": "excerpt",
+        "context": "AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "originalIds": [
+          "liang-75ccf7750c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题3：AGI主线"
+          ]
+        }
+      },
+      "liang-7360c1f0ad": {
+        "kind": "excerpt",
+        "context": "AGI 路线图：CoT → Agent → 持续学习 → 奇点 → 具身",
+        "originalIds": [
+          "liang-7360c1f0ad"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-e2baec30fc": {
+        "kind": "excerpt",
+        "context": "是否进入非AGI主线的业务",
+        "originalIds": [
+          "liang-e2baec30fc"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-fc3d246867": {
+        "kind": "combined-excerpt",
+        "context": "持续学习：问题、方法与尚未突破的难点",
+        "originalIds": [
+          "liang-31b2ba2ea9",
+          "liang-e3427b8ebd",
+          "liang-96cdfecd2a"
+        ],
+        "reason": "补全这个问题和它的指代，同时保留尚在摸索的限制。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点一：学习是问题",
+            "焦点五：持续学习仍在探索"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-3be8077b71": {
+        "kind": "excerpt",
+        "context": "持续学习可能加快研发的假设",
+        "originalIds": [
+          "liang-3be8077b71"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题8、焦点六：持续学习"
+          ]
+        }
+      },
+      "liang-0300bedf79": {
+        "kind": "excerpt",
+        "context": "持续学习：全世界都还没有找到方法",
+        "originalIds": [
+          "liang-0300bedf79"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点五：持续学习仍在探索"
+          ]
+        }
+      },
+      "liang-ec8f5a6e7d": {
+        "kind": "combined-excerpt",
+        "context": "模型研发中的算力资源比较",
+        "originalIds": [
+          "liang-0fd8e8e38e",
+          "liang-ec3a8c6a0e"
+        ],
+        "reason": "避免人才不是瓶颈被泛化为所有企业都不缺人才；这两句未在本次报道逐句收录。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-0094d956f1": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-0094d956f1"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题5：竞争与资源"
+          ]
+        }
+      },
+      "liang-ea63357588": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-ea63357588"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-373755df34": {
+        "kind": "combined-excerpt",
+        "context": "有限算力下的模型规模选择",
+        "originalIds": [
+          "liang-46ba770a86",
+          "liang-ea33258c84",
+          "liang-90875afbb1"
+        ],
+        "reason": "将模型大小与资源约束、尚未触及上限的解释合并。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题7：Scaling与资源限制"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-08f955ea7e": {
+        "kind": "combined-excerpt",
+        "context": "当时的差距估计与追赶目标，非已实现成果",
+        "originalIds": [
+          "liang-9a0de44dad",
+          "liang-4c104b2f3e"
+        ],
+        "reason": "保留12—18个月及两年的粗略表述；明确6个月、3个月是目标。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点四：追赶目标"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-750bbe5e12": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-750bbe5e12"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-c79190a46d": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-c79190a46d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-57794e1515": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-57794e1515"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-a5c0e011c5": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-a5c0e011c5"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-518d13708c": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-518d13708c"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-db56d1674e": {
+        "kind": "excerpt",
+        "context": "大模型竞争的差异",
+        "originalIds": [
+          "liang-db56d1674e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题5：竞争与资源"
+          ]
+        }
+      },
+      "liang-d948785ea7": {
+        "kind": "excerpt",
+        "context": "算力、芯片与中美差距",
+        "originalIds": [
+          "liang-d948785ea7"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题5：竞争与资源"
+          ]
+        }
+      },
+      "liang-cf0c85bd32": {
+        "kind": "combined-excerpt",
+        "context": "团队稳定与长期研发的关系",
+        "originalIds": [
+          "liang-9fd7b8bef8",
+          "liang-ea23bd9290"
+        ],
+        "reason": "为一定能做成的信心表达保留团队条件，不作为结果保证。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-ae0de7e88b": {
+        "kind": "excerpt",
+        "context": "团队稳定性的重要性，非否认算力约束",
+        "originalIds": [
+          "liang-ae0de7e88b"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-25c9f4cff4": {
+        "kind": "excerpt",
+        "context": "团队、组织与人才：唯一不可退让的核心利益",
+        "originalIds": [
+          "liang-25c9f4cff4"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-790e2affac": {
+        "kind": "combined-excerpt",
+        "context": "团队管理：安排工作与自主研究并存",
+        "originalIds": [
+          "liang-ce1f5f8e72",
+          "liang-2954a2c4dd",
+          "liang-509c0ef9fd"
+        ],
+        "reason": "避免截取没有人管、没有KPI后误读为完全没有组织安排。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-0dbbc4db15": {
+        "kind": "excerpt",
+        "context": "团队、组织与人才：唯一不可退让的核心利益",
+        "originalIds": [
+          "liang-0dbbc4db15"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-f7ae0b5fca": {
+        "kind": "excerpt",
+        "context": "团队扩张后的组织架构调整",
+        "originalIds": [
+          "liang-f7ae0b5fca"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-97f1cf88d3": {
+        "kind": "excerpt",
+        "context": "竞争与终局：不追求暴利，不树敌",
+        "originalIds": [
+          "liang-97f1cf88d3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-44d6ec67a0": {
+        "kind": "edited-excerpt",
+        "context": "对国内基模竞争格局的推测",
+        "originalIds": [
+          "liang-bdf4c896ba"
+        ],
+        "reason": "按报道删除误植的不说，保留可能，避免当成确定数量。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点二：人才与竞争"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-66e1e8d258": {
+        "kind": "combined-excerpt",
+        "context": "大模型厂商的盈利差异",
+        "originalIds": [
+          "liang-2110cee3c4",
+          "liang-1806dd5183"
+        ],
+        "reason": "把成本控制放回模型厂商竞争与利润的具体语境。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点二：人才与竞争"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-f9edac854c": {
+        "kind": "edited-excerpt",
+        "context": "对海外模型竞争的阶段性预测",
+        "originalIds": [
+          "liang-928c37e5d3"
+        ],
+        "reason": "去掉将提问前提写成普遍事实的Anthropic全面超过OpenAI表述，保留原条目中可对应的预测。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题5：竞争与资源"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-125ea0e6bd": {
+        "kind": "excerpt",
+        "context": "竞争与终局：不追求暴利，不树敌",
+        "originalIds": [
+          "liang-125ea0e6bd"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-af45f79caa": {
+        "kind": "combined-excerpt",
+        "context": "协助行业伙伴的意愿与投入边界",
+        "originalIds": [
+          "liang-d450f1f1ee",
+          "liang-3e7e4987ca"
+        ],
+        "reason": "把没有精力与所谈的行业协助放在一起；仍沿用原汇编来源。",
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-7949365348": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-7949365348"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7e8d99c424": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-7e8d99c424"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-50a7e6bacb": {
+        "kind": "excerpt",
+        "context": "AGI研发与应用商业化的关系",
+        "originalIds": [
+          "liang-50a7e6bacb"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题3：AGI主线"
+          ]
+        }
+      },
+      "liang-5298cbce20": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-5298cbce20"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-b7ad3ba94f": {
+        "kind": "excerpt",
+        "context": "技术不再进步这一假设下的经营保底",
+        "originalIds": [
+          "liang-b7ad3ba94f"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题10：Agent与商业保底"
+          ]
+        }
+      },
+      "liang-d6cb120c5f": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-d6cb120c5f"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题10：Agent与商业保底"
+          ]
+        }
+      },
+      "liang-b55ba21b22": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-b55ba21b22"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-43fe45aa5d": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-43fe45aa5d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-636ccea0ca": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-636ccea0ca"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-667896407e": {
+        "kind": "excerpt",
+        "context": "商业化、数据与产品",
+        "originalIds": [
+          "liang-667896407e"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-7c8fd5a491": {
+        "kind": "edited-excerpt",
+        "context": "当时技术条件下的To B收入上限",
+        "originalIds": [
+          "liang-6966ca2066"
+        ],
+        "reason": "补回报道中的适用条件，避免与模型训练的算力瓶颈混为一谈。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题6：集群、芯片与需求"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-90620c0cc3": {
+        "kind": "excerpt",
+        "context": "不做什么：视频、3D、世界模型与“只吃一块”",
+        "originalIds": [
+          "liang-90620c0cc3"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-9cfe67c353": {
+        "kind": "excerpt",
+        "context": "不做什么：视频、3D、世界模型与“只吃一块”",
+        "originalIds": [
+          "liang-9cfe67c353"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-6c5589a47b": {
+        "kind": "combined-excerpt",
+        "context": "对公司业务边界与规模的设想",
+        "originalIds": [
+          "liang-9d922a5c64",
+          "liang-5af282fc6c"
+        ],
+        "reason": "补全只做一块的对象；万亿公司为愿景和预测。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题6：集群、芯片与需求"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-3ae28edb57": {
+        "kind": "excerpt",
+        "context": "不做什么：视频、3D、世界模型与“只吃一块”",
+        "originalIds": [
+          "liang-3ae28edb57"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-bf952c1ee0": {
+        "kind": "combined-excerpt",
+        "context": "自建集群与是否自研芯片的区别",
+        "originalIds": [
+          "liang-44926fe5c3",
+          "liang-00507eb5d8"
+        ],
+        "reason": "保留合理采购价格这一条件，避免被读成拒绝建设算力。",
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "专题6：集群、芯片与需求"
+          ]
+        },
+        "removedDuplicateIds": []
+      },
+      "liang-baaf52433d": {
+        "kind": "excerpt",
+        "context": "补充：芯片、竞争与人才的其他判断",
+        "originalIds": [
+          "liang-baaf52433d"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-603743a9ca": {
+        "kind": "excerpt",
+        "context": "补充：芯片、竞争与人才的其他判断",
+        "originalIds": [
+          "liang-603743a9ca"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-e87b593d43": {
+        "kind": "excerpt",
+        "context": "补充：芯片、竞争与人才的其他判断",
+        "originalIds": [
+          "liang-e87b593d43"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-39a31e8ab6": {
+        "kind": "excerpt",
+        "context": "补充：芯片、竞争与人才的其他判断",
+        "originalIds": [
+          "liang-39a31e8ab6"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "not-covered",
+          "sourceId": "S13",
+          "locators": []
+        }
+      },
+      "liang-8b8ca96de0": {
+        "kind": "excerpt",
+        "context": "补充：芯片、竞争与人才的其他判断",
+        "originalIds": [
+          "liang-8b8ca96de0"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点二：人才与竞争"
+          ]
+        }
+      },
+      "liang-44ce53b4c7": {
+        "kind": "excerpt",
+        "context": "补充：芯片、竞争与人才的其他判断",
+        "originalIds": [
+          "liang-44ce53b4c7"
+        ],
+        "reason": null,
+        "verification": {
+          "status": "supported",
+          "sourceId": "S13",
+          "locators": [
+            "焦点二：人才与竞争"
+          ]
+        }
+      },
+      "liang-ab418d964c": {
+        "kind": "summary",
+        "context": "低成本的两层意义",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "专题9：成本效率"
+          ]
+        }
+      },
+      "liang-ee808137b4": {
+        "kind": "summary",
+        "context": "下一代模型与当前改进",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "专题8：下一代模型"
+          ]
+        }
+      },
+      "liang-07b13577bb": {
+        "kind": "summary",
+        "context": "AI超越人类知识的范围",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "焦点三：数据与能力边界"
+          ]
+        }
+      },
+      "liang-54c29470c5": {
+        "kind": "summary",
+        "context": "追赶目标的限制条件",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "焦点四：追赶目标"
+          ]
+        }
+      },
+      "liang-ab184f7b87": {
+        "kind": "summary",
+        "context": "研发目标与经营保底",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "专题3、专题10"
+          ]
+        }
+      },
+      "liang-da7b0238fe": {
+        "kind": "summary",
+        "context": "对全球AI分工的推测",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "专题5：竞争与资源"
+          ]
+        }
+      },
+      "liang-d4af2cf5ad": {
+        "kind": "summary",
+        "context": "当时API定价的需求判断",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "专题2：开源与定价"
+          ]
+        }
+      },
+      "liang-a67426e1bf": {
+        "kind": "summary",
+        "context": "大模型的资源门槛",
+        "originalIds": [],
+        "reason": "编辑概述，非逐字引语；展示时必须标明观点整理。",
+        "verification": {
+          "status": "summary",
+          "sourceId": "S13",
+          "locators": [
+            "专题5、专题7"
+          ]
+        }
+      }
+    }
   }
 }

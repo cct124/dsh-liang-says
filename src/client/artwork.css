@@ -47,7 +47,7 @@ body:not([data-ds-dark-theme]) .lx-portrait { opacity: .7; mask-image: none; }
 .lx-quote { position: absolute; top: 51%; left: 8%; right: 8%; transform: translateY(-12%); text-align: center; pointer-events: none; }
 .lx-passage { display: inline-block; max-width: 100%; vertical-align: top; }
 .lx-words { position: relative; margin: 0; font-family: 'STSong', 'Songti SC', 'SimSun', serif; font-size: clamp(24px, 3.7cqw, 47px); font-weight: 500; line-height: 1.7; letter-spacing: .06em; text-wrap: balance; text-shadow: var(--lx-word-shadow); }
-.lx-quote-long { left: 7%; right: 7%; top: 45%; }
+.lx-quote-long { left: 7%; right: 7%; top: 50%; transform: translateY(-50%); }
 .lx-quote-long .lx-words { font-size: clamp(19px, 2.65cqw, 34px); line-height: 1.7; }
 .lx-fragment { display: inline-block; white-space: pre-wrap; opacity: 0; }
 .lx-glyph { display: inline-block; }

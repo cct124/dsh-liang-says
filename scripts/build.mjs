@@ -13,10 +13,10 @@ await mkdir(resolve(output, 'locale'), { recursive: true });
 await mkdir(resolve(output, 'asset/quotes'), { recursive: true });
 const manifest = {
   name, version: packageInfo.version, private: true, type: 'module',
-  description: dev ? '梁选开关与动效的 DSH 内置开发预览' : '在任意模式任务运行期间展示梁文峰语录，可通过输入框梁选开关控制',
+  description: dev ? '梁选开关与动效的 DSH 内置开发预览' : '在任意模式任务运行期间展示梁文锋语录，可通过输入框梁选开关控制',
   engines: { dsh: '0.2.1-rc.3' },
   exports: { '.': './index.js', './client': './client.js', './locale/*.json': './locale/*.json', './icon': './icon.svg' },
-  files: ['index.js', 'client.js', 'cordis.patch.yml', 'locale', 'icon.svg', 'asset/quotes/quotes.json'],
+  files: ['index.js', 'client.js', 'cordis.patch.yml', 'locale', 'icon.svg', 'asset/quotes/quotes.json', 'asset/quotes/quote-context.json'],
   dsh: {
     bundle: { patch: './cordis.patch.yml' },
     client: { platform: 'web', immediately: true, inject: ['@deepseek-ai/dsh-client-ui-layout',
@@ -29,8 +29,9 @@ await writeFile(resolve(output, 'cordis.patch.yml'), `- insert:\n    - id: ${nam
 await copyFile(resolve(root, 'asset/icon.svg'), resolve(output, 'icon.svg'));
 await copyFile(resolve(root, 'README.md'), resolve(output, 'README.md'));
 await copyFile(resolve(root, 'asset/quotes/quotes.json'), resolve(output, 'asset/quotes/quotes.json'));
+await copyFile(resolve(root, 'asset/quotes/quote-context.json'), resolve(output, 'asset/quotes/quote-context.json'));
 for (const [locale, title, description] of [
-  ['zh', dev ? '梁选预览' : '梁选', dev ? '在 DSH 内模拟任务运行、预览语录与光芒动画。仅开发构建包含操控面板。' : '任意模式任务运行时展示梁文峰语录；输入框开关默认开启。'],
+  ['zh', dev ? '梁选预览' : '梁选', dev ? '在 DSH 内模拟任务运行、预览语录与光芒动画。仅开发构建包含操控面板。' : '任意模式任务运行时展示梁文锋语录；输入框开关默认开启。'],
   ['en', dev ? 'Liang preview' : 'Liang', dev ? 'Simulate running tasks and preview quotes and sunlight inside DSH.' : 'Liang Wenfeng quotes for tasks in any mode, enabled by default with a composer switch.'],
 ]) await writeFile(resolve(output, 'locale', locale + '.json'), JSON.stringify({ meta: { title, description } }, null, 2) + '\n');
 
