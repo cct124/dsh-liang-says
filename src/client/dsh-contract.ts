@@ -12,3 +12,12 @@ export interface DshClientContext {
   };
   effect(setup: () => (() => void), label?: string): unknown;
 }
+
+type SelectorHook<State> = <Value>(selector: (state: State) => Value) => Value;
+/** Root slot standard props supplied by ui-session and ui-layout (DSH 0.2.1). */
+export interface ShellProps {
+  useSessions: SelectorHook<{ byId: Record<string, { retainedBy: { mainView?: number } }> }>;
+  useSessionStatus: SelectorHook<ReadonlyMap<string, { running: boolean | undefined; pendingInteraction: unknown }>>;
+  usePanelInfo: SelectorHook<{ activePanelId: string | null }>;
+  t: (key: string) => string;
+}

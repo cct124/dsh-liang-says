@@ -13,13 +13,14 @@ await mkdir(resolve(output, 'locale'), { recursive: true });
 await mkdir(resolve(output, 'asset/quotes'), { recursive: true });
 const manifest = {
   name, version: packageInfo.version, private: true, type: 'module',
-  description: dev ? '梁选文案与动效的 DSH 内置开发预览' : '梁选模式的语录与视觉效果（当前为展示组件阶段）',
+  description: dev ? '梁选开关与动效的 DSH 内置开发预览' : '在任意模式任务运行期间展示梁文峰语录，可通过输入框梁选开关控制',
   engines: { dsh: '0.2.1-rc.3' },
   exports: { '.': './index.js', './client': './client.js', './locale/*.json': './locale/*.json', './icon': './icon.svg' },
   files: ['index.js', 'client.js', 'cordis.patch.yml', 'locale', 'icon.svg', 'asset/quotes/quotes.json'],
   dsh: {
     bundle: { patch: './cordis.patch.yml' },
     client: { platform: 'web', immediately: true, inject: ['@deepseek-ai/dsh-client-ui-layout',
+      '@deepseek-ai/dsh-client-ui-session', '@deepseek-ai/dsh-client-ui-conversation',
       ...(dev ? ['@deepseek-ai/dsh-client-ui-sidebar'] : [])] },
   },
 };
@@ -29,15 +30,15 @@ await copyFile(resolve(root, 'asset/icon.svg'), resolve(output, 'icon.svg'));
 await copyFile(resolve(root, 'README.md'), resolve(output, 'README.md'));
 await copyFile(resolve(root, 'asset/quotes/quotes.json'), resolve(output, 'asset/quotes/quotes.json'));
 for (const [locale, title, description] of [
-  ['zh', dev ? '梁选预览' : '梁选模式', dev ? '在 DSH 内模拟任务运行、预览语录与光芒动画。仅开发构建包含操控面板。' : '标准模式之上的梁文锋语录视觉效果。'],
-  ['en', dev ? 'Liang preview' : 'Liang mode', dev ? 'Simulate running tasks and preview quotes and sunlight inside DSH.' : 'Liang Wenfeng quote effects for standard mode.'],
+  ['zh', dev ? '梁选预览' : '梁选', dev ? '在 DSH 内模拟任务运行、预览语录与光芒动画。仅开发构建包含操控面板。' : '任意模式任务运行时展示梁文峰语录；输入框开关默认开启。'],
+  ['en', dev ? 'Liang preview' : 'Liang', dev ? 'Simulate running tasks and preview quotes and sunlight inside DSH.' : 'Liang Wenfeng quotes for tasks in any mode, enabled by default with a composer switch.'],
 ]) await writeFile(resolve(output, 'locale', locale + '.json'), JSON.stringify({ meta: { title, description } }, null, 2) + '\n');
 
 await build({ entryPoints: [resolve(root, 'src/host/index.ts')], outfile: resolve(output, 'index.js'), bundle: true, format: 'esm', platform: 'node', target: 'node24' });
 const options = {
   absWorkingDir: root, entryPoints: [dev ? 'src/client/dev.tsx' : 'src/client/index.ts'],
   outfile: resolve(output, 'client.js'), bundle: true, format: 'cjs', platform: 'browser', target: 'chrome120',
-  external: ['react'], jsx: 'transform', loader: { '.png': 'dataurl', '.css': 'text' },
+  external: ['react'], jsx: 'transform', loader: { '.png': 'dataurl', '.mp3': 'dataurl', '.css': 'text' },
   define: { 'process.env.NODE_ENV': JSON.stringify(dev ? 'development' : 'production') },
   minify: !dev, sourcemap: dev ? 'inline' : false,
   banner: { js: `window.__ModuleLoader__.load({id:${JSON.stringify(name)},factory(require){const module={exports:{}};` },

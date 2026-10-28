@@ -1,24 +1,64 @@
-.lx-overlay { position: absolute; inset: 0; overflow: hidden; z-index: 4; opacity: 0; cursor: pointer; color: #fff4d6; }
-.lx-shade { position: absolute; inset: 0; background: rgb(0 0 0 / .6); }
-.lx-art { position: absolute; inset: 0; opacity: .5; pointer-events: none; overflow: hidden; }
+.lx-overlay {
+  --lx-ink: #fff4d6; --lx-shade: rgb(0 0 0 / .6);
+  --lx-edition-ink: #fff0cb99; --lx-rule: #ffe2a850; --lx-hint: #fff3d4a6; --lx-key-border: #fff4dc40;
+  --lx-word-shadow: 0 2px 6px #0007, 0 4px 28px #000b; --lx-signature-shadow: 0 2px 12px #000a;
+  position: absolute; inset: 0; overflow: hidden; z-index: 4; opacity: 0; cursor: pointer; color: var(--lx-ink);
+}
+/* Follow the app's resolved theme, including explicit preferences and system changes. */
+body:not([data-ds-dark-theme]) .lx-overlay {
+  --lx-ink: #ffdf89; --lx-shade: rgb(207 138 0 / 0%);
+  --lx-word-shadow: 0 0px 0px #00000069, 0 1px 3px #000000f2;
+  --lx-signature-shadow: 0 1px 1px #000000b8;
+  --lx-particle-0: #b18a45; --lx-particle-1: #c39a50; --lx-particle-2: #cda65e;
+  --lx-particle-3: #ba985c; --lx-particle-4: #d3ae69;
+  --lx-particle-settle: var(--lx-ink);
+}
+/* Control the light-mode portrait and rays independently. */
+body:not([data-ds-dark-theme]) .lx-art { opacity: 1; }
+body:not([data-ds-dark-theme]) :is(.lx-aureole, .lx-rays, .lx-halo) { opacity: .5; }
+body:not([data-ds-dark-theme]) .lx-portrait { opacity: .7; mask-image: none; }
+.lx-shade { position: absolute; inset: 0; background: var(--lx-shade); }
+.lx-art {
+  --lx-portrait-height: 112cqh; --lx-portrait-top: 12cqh;
+  position: absolute; inset: 0; opacity: .5; isolation: isolate; pointer-events: none; overflow: hidden;
+  /* Composite the fixed silhouette and portrait before scaling their shared parent. */
+  transform-origin: 50% calc(var(--lx-portrait-top) + var(--lx-portrait-height) * .5);
+  animation: lx-art-breathe 10s ease-in-out infinite;
+}
+/* Subtract the PNG's alpha from the lights themselves, so a translucent portrait cannot transmit rays. */
+.lx-light {
+  position: absolute; inset: 0; z-index: 0;
+  mask-image: linear-gradient(#000 0 0), var(--lx-portrait-mask);
+  mask-size: 100% 100%, auto var(--lx-portrait-height);
+  mask-position: 0 0, center var(--lx-portrait-top);
+  mask-repeat: no-repeat;
+  mask-composite: subtract;
+}
 .lx-aureole { position: absolute; inset: 0; background: radial-gradient(ellipse at 50% 28%, #f7d891a0 0%, #c08e3a35 28%, transparent 65%); }
 .lx-rays { position: absolute; width: 180cqmax; height: 180cqmax; left: 50%; top: 28%; border-radius: 50%; background: repeating-conic-gradient(from 0deg, #ffdf8c88 0deg, #ffe8af44 4deg, transparent 8deg, transparent 16deg); mask-image: radial-gradient(circle, transparent 0%, black 8%, #0008 36%, transparent 65%); animation: lx-rays 80s linear infinite; }
 .lx-rays-soft { background: repeating-conic-gradient(from 8deg, #ffe3a04d 0deg, transparent 6deg, transparent 23deg); animation-duration: 125s; animation-direction: reverse; }
 .lx-halo { position: absolute; left: 50%; top: 28%; width: 34cqh; height: 34cqh; transform: translate(-50%, -50%); border-radius: 50%; background: radial-gradient(circle, #fff6c8ee, #ffe18daa 32%, #e8ac3666 50%, transparent 72%); filter: blur(4px); }
-.lx-portrait { position: absolute; height: 112%; width: auto; max-width: none; left: 50%; top: 12%; object-fit: contain; transform: translateX(-50%); mask-image: linear-gradient(black 0%, black 58%, transparent 95%); animation: lx-breathe 10s ease-in-out infinite; }
-.lx-edition { position: absolute; top: 6%; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 18px; font-family: 'STSong', 'SimSun', serif; font-size: 12px; letter-spacing: .5em; color: #fff0cb99; pointer-events: none; }
-.lx-edition span { width: 34px; height: 1px; background: #ffe2a850; }
+.lx-portrait { position: absolute; z-index: 2; height: var(--lx-portrait-height); width: auto; max-width: none; left: 50%; top: var(--lx-portrait-top); opacity: .7; object-fit: contain; transform: translateX(-50%); mask-image: linear-gradient(black 0%, black 58%, transparent 95%); }
+.lx-edition { position: absolute; top: 6%; left: 0; right: 0; display: flex; align-items: center; justify-content: center; gap: 18px; font-family: 'STSong', 'SimSun', serif; font-size: 12px; color: var(--lx-edition-ink); pointer-events: none; }
+.lx-edition-line { width: 34px; height: 1px; background: var(--lx-rule); }
+.lx-edition-label { display: inline-flex; align-items: center; gap: 10px; }
+.lx-edition-book { width: 18px; height: 18px; flex: none; }
+.lx-text-layer { position: absolute; inset: 0; isolation: isolate; pointer-events: none; }
 .lx-quote { position: absolute; top: 51%; left: 8%; right: 8%; transform: translateY(-12%); text-align: center; pointer-events: none; }
 .lx-passage { display: inline-block; max-width: 100%; vertical-align: top; }
-.lx-words { margin: 0; font-family: 'STSong', 'Songti SC', 'SimSun', serif; font-size: clamp(24px, 3.7cqw, 47px); font-weight: 500; line-height: 1.7; letter-spacing: .06em; text-wrap: balance; text-shadow: 0 2px 6px #0007, 0 4px 28px #000b; }
+.lx-words { position: relative; margin: 0; font-family: 'STSong', 'Songti SC', 'SimSun', serif; font-size: clamp(24px, 3.7cqw, 47px); font-weight: 500; line-height: 1.7; letter-spacing: .06em; text-wrap: balance; text-shadow: var(--lx-word-shadow); }
 .lx-quote-long { left: 7%; right: 7%; top: 45%; }
 .lx-quote-long .lx-words { font-size: clamp(19px, 2.65cqw, 34px); line-height: 1.7; }
 .lx-fragment { display: inline-block; white-space: pre-wrap; opacity: 0; }
-.lx-signature { margin: 22px 0 0; text-align: right; font-family: 'STSong', 'SimSun', serif; font-size: clamp(15px, 1.8cqw, 22px); letter-spacing: .12em; text-shadow: 0 2px 12px #000a; opacity: 0; }
-.lx-dismiss { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); color: #fff3d4a6; background: transparent; border: 0; padding: 8px 12px; font-size: 11px !important; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
-.lx-dismiss kbd { font-size: 10px; border: 1px solid #fff4dc40; padding: 2px 5px; border-radius: 4px; font-family: inherit; }
-.lx-reduced .lx-rays, .lx-reduced .lx-portrait { animation: none; }
+.lx-glyph { display: inline-block; }
+/* Add complementary text/particle alpha without blending additively into the background. */
+.lx-particles { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; mix-blend-mode: plus-lighter; }
+/* Shadow the live particle silhouette before the final DOM text fades in. */
+body:not([data-ds-dark-theme]) .lx-particles { filter: drop-shadow(0 1px 1.5px #000000f2); }
+.lx-signature { margin: 22px 0 0; text-align: right; font-family: 'STSong', 'SimSun', serif; font-size: clamp(15px, 1.8cqw, 22px); letter-spacing: .12em; text-shadow: var(--lx-signature-shadow); opacity: 0; }
+.lx-dismiss { position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%); color: var(--lx-hint); background: transparent; border: 0; padding: 8px 12px; font-size: 11px !important; display: flex; align-items: center; gap: 10px; white-space: nowrap; }
+.lx-dismiss kbd { font-size: 10px; border: 1px solid var(--lx-key-border); padding: 2px 5px; border-radius: 4px; font-family: inherit; }
+.lx-reduced .lx-rays, .lx-reduced .lx-art { animation: none; }
 .lx-reduced .lx-rays { transform: translate(-50%, -50%); }
-.lx-reduced .lx-portrait { transform: translateX(-50%); }
 @keyframes lx-rays { from { transform: translate(-50%, -50%) rotate(0deg); } to { transform: translate(-50%, -50%) rotate(360deg); } }
-@keyframes lx-breathe { 0%,100% { transform: translateX(-50%) scale(1); } 50% { transform: translateX(-50%) scale(1.025); } }
+@keyframes lx-art-breathe { 0%,100% { transform: scale(1); } 50% { transform: scale(1.025); } }

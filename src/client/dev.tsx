@@ -8,6 +8,9 @@ import { zh, en, type Translate } from './locales.ts';
 import type { DshClientContext } from './dsh-contract.ts';
 import css from './style.css';
 import artworkCss from './artwork.css';
+import { installLiang } from './live.tsx';
+import { LiangToggle } from './toggle.tsx';
+import type { LiangPreference } from '../core/preference.ts';
 
 const NS = 'liang.preview';
 const PANEL = 'liang-preview';
@@ -16,10 +19,13 @@ const sources: Record<string, Source[]> = sourceData.entries;
 
 export const inject = ['slots', 'locale'];
 export function apply(ctx: DshClientContext): void {
+  const preference = installLiang(ctx);
   const simulation = new Simulation(new QuotePicker(quotes));
+  simulation.setEnabled(preference.getSnapshot());
+  ctx.effect(() => preference.subscribe(() => simulation.setEnabled(preference.getSnapshot())), 'liang: preview preference');
   ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'liang: preview translations');
   const t = ctx.locale.bind(NS);
-  function Page({ t }: { t: Translate }) { return <Preview simulation={simulation} t={t} />; }
+  function Page({ t }: { t: Translate }) { return <Preview simulation={simulation} preference={preference} t={t} />; }
   ctx.slots.inject('main', () => ctx.slots.register({ name: 'main', key: PANEL, locale: NS }, Page));
   ctx.slots.inject('sidebar.panellist', () => ctx.slots.register({
     name: 'sidebar.panellist', id: PANEL, order: 20, label: () => t('panel'), locale: NS,
@@ -34,7 +40,7 @@ function SunIcon({ size = 18 }: { size?: number }) {
   </svg>;
 }
 
-function Preview({ simulation, t }: { simulation: Simulation; t: Translate }) {
+function Preview({ simulation, preference, t }: { simulation: Simulation; preference: LiangPreference; t: Translate }) {
   const state = React.useSyncExternalStore(simulation.subscribe, simulation.getSnapshot);
   const [library, setLibrary] = React.useState(false);
   const [search, setSearch] = React.useState('');
@@ -87,22 +93,22 @@ function Preview({ simulation, t }: { simulation: Simulation; t: Translate }) {
         <span className="lx-eyebrow">LIANG SAYS</span>
         <h1>{t('lead')}</h1><p>{t('intro')}</p>
         <div className="lx-live-state"><i className={active ? 'lx-pulse' : ''} />{t(state.phase)}</div>
-        <p className="lx-state-hint">{!state.enabled ? t('standardHint') : t((state.phase + 'Hint') as 'idleHint')}</p>
+        <p className="lx-state-hint">{!state.enabled ? t('disabledHint') : t((state.phase + 'Hint') as 'idleHint')}</p>
       </div>
       <div className="lx-stage-footer"><span>{quotes.length} {t('items')} · 2019—2026</span><span>{t('shown')} {state.shown} {t('items')}</span></div>
-      <QuoteOverlay request={state.request} commit={commit} onEntered={onEntered} dismiss={dismiss} reducedMotion={reduced} closeLabel={t('close')} onError={onError} />
+      {state.enabled && <QuoteOverlay request={state.request} commit={commit} onEntered={onEntered} dismiss={dismiss} reducedMotion={reduced} closeLabel={t('close')} onError={onError} />}
     </div>
     <div className="lx-console">
       <div className="lx-console-top"><div className="lx-console-title"><span className="lx-dev-tag">DEV</span><span>{t('state')}</span></div>
         <div className="lx-console-tools"><button type="button" className={library ? 'is-selected' : ''} onClick={() => setLibrary(!library)} aria-expanded={library}>{t(library ? 'closeCatalog' : 'catalog')} <span>{quotes.length}</span></button>
-          <button type="button" onClick={() => { simulation.reset(); setError(''); }}>{t('reset')}</button></div></div>
+          <button type="button" onClick={() => { simulation.reset(); simulation.setEnabled(preference.getSnapshot()); setError(''); }}>{t('reset')}</button></div></div>
       <div className="lx-controls">
         <div className="lx-phases" aria-label={t('state')}>
           {(['thinking', 'tool', 'answer', 'done'] as Phase[]).map(phase => <button type="button" key={phase} aria-pressed={state.phase === phase}
             onClick={() => simulation.setPhase(phase)}>{phase === 'thinking' ? t(state.phase === 'idle' || state.phase === 'done' ? 'start' : 'thinking') : t(phase)}</button>)}
         </div>
         <div className="lx-settings">
-          <label>{t('mode')}<select value={state.enabled ? 'liang' : 'standard'} onChange={event => simulation.setEnabled(event.target.value === 'liang')}><option value="liang">{t('liang')}</option><option value="standard">{t('standard')}</option></select></label>
+          <LiangToggle preference={preference} label={t('liang')} hint={t('toggleHint')} />
           <div className="lx-duration-setting"><span>{t('duration')}</span><output title={t('durationHint')}>{t('durationRange')}</output></div>
           <label>{t('speed')}<select value={state.speed} onChange={event => simulation.setSpeed(Number(event.target.value))}>{[1, 5, 10].map(value => <option key={value} value={value}>{value}×</option>)}</select></label>
           <label>{t('sample')}<select value={sample} onChange={event => setSample(event.target.value)}>{['random', 'shortest', 'longest'].map(value => <option key={value} value={value}>{t(value as 'random')}</option>)}</select></label>

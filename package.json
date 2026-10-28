@@ -1,7 +1,7 @@
 {
   "name": "dsh-liang-says",
   "version": "0.1.0-dev.4",
-  "description": "梁选模式的语录与视觉效果",
+  "description": "任意模式任务运行期间的梁选语录与视觉效果",
   "private": true,
   "type": "module",
   "engines": {

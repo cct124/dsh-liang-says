@@ -1,0 +1,15 @@
+/* Use the resident conversation's box, excluding navigation, rightbar and window chrome. */
+[data-slot="main.conversation"] > [data-phase] { anchor-name: --lx-conversation; }
+.lx-live-stage {
+  position: fixed;
+  position-anchor: --lx-conversation;
+  left: anchor(left, 0px);
+  top: anchor(top, 0px);
+  width: anchor-size(width, 0px);
+  height: anchor-size(height, 0px);
+  overflow: hidden;
+  container-type: size;
+  pointer-events: none !important;
+}
+.lx-live-stage .lx-overlay { pointer-events: auto; }
+.lx-live-error { position: absolute; bottom: 12px; right: 12px; pointer-events: auto; }

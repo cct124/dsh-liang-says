@@ -1,0 +1,8 @@
+.lx-toggle { display: inline-flex; align-items: center; gap: 8px; flex: none; padding: 5px 7px; border: 0; border-radius: 7px; background: transparent; color: var(--dsw-alias-label-secondary, #aaa); font: inherit; font-size: 13px; line-height: 20px; white-space: nowrap; cursor: pointer; }
+.lx-toggle:hover { background: color-mix(in srgb, currentColor 7%, transparent); }
+.lx-toggle:focus-visible { outline: 2px solid #c4a66b; outline-offset: 2px; }
+.lx-switch-track { display: inline-flex; align-items: center; width: 30px; height: 18px; padding: 2px; box-sizing: border-box; border-radius: 20px; background: color-mix(in srgb, currentColor 30%, transparent); transition: background 150ms ease; }
+.lx-switch-track > span { width: 14px; height: 14px; border-radius: 50%; background: #f8f5ef; box-shadow: 0 1px 2px #0003; transition: transform 150ms ease; }
+.lx-toggle[aria-checked="true"] .lx-switch-track { background: #ac8950; }
+.lx-toggle[aria-checked="true"] .lx-switch-track > span { transform: translateX(12px); }
+@media (prefers-reduced-motion: reduce) { .lx-switch-track, .lx-switch-track > span { transition: none; } }

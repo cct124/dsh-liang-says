@@ -125,7 +125,7 @@ test('dismissal waits the full sampled duration even across running phase change
   assert.equal(simulation.getSnapshot().request!.quote.id, 'b');
 });
 
-test('background and standard mode pause display; finishing invalidates callbacks', () => {
+test('background and disabled switch pause display; finishing invalidates callbacks', () => {
   const simulation = new Simulation(new QuotePicker(quotes));
   simulation.setPhase('tool'); finishEntrance(simulation); simulation.advance(1000);
   simulation.setVisible(false); simulation.advance(90_000);

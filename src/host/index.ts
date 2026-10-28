@@ -1,2 +1,2 @@
-/** This milestone only registers a client preview. No model hooks or tools. */
+/** Client-side presentation only; no model hooks or tools. */
 export function apply(): void {}
