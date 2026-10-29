@@ -6,7 +6,6 @@ export interface LiveState {
   enabled: boolean;
   visible: boolean;
   waitingForUser: boolean;
-  userTyping: boolean;
 }
 
 /** Uses the host's running state for every preset; never alters the agent configuration. */
@@ -18,7 +17,7 @@ export class LiveQuotes {
     const changed = this.sessionId !== state.sessionId;
     this.sessionId = state.sessionId;
     if (changed) this.simulation.setPhase('idle');
-    const visible = state.visible && !state.waitingForUser && !state.userTyping && state.sessionId !== undefined;
+    const visible = state.visible && !state.waitingForUser && state.sessionId !== undefined;
     const before = this.simulation.getSnapshot();
     if (visible !== before.visible) this.simulation.setVisible(visible);
     this.simulation.setEnabled(state.enabled);

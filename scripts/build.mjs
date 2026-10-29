@@ -45,7 +45,7 @@ await build({ entryPoints: [resolve(root, 'src/host/index.ts')], outfile: resolv
 const options = {
   absWorkingDir: root, entryPoints: [dev ? 'src/client/dev.tsx' : 'src/client/index.ts'],
   outfile: resolve(output, 'client.js'), bundle: true, format: 'cjs', platform: 'browser', target: 'chrome120',
-  external: ['react'], jsx: 'transform', loader: { '.png': 'dataurl', '.mp3': 'dataurl', '.css': 'text' },
+  external: ['react', 'react-dom'], jsx: 'transform', loader: { '.png': 'dataurl', '.mp3': 'dataurl', '.css': 'text' },
   define: { 'process.env.NODE_ENV': JSON.stringify(dev ? 'development' : 'production') },
   minify: !dev, sourcemap: dev ? 'inline' : false,
   banner: { js: `window.__ModuleLoader__.load({id:${JSON.stringify(name)},factory(require){const module={exports:{}};` },

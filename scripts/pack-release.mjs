@@ -38,7 +38,7 @@ runInNewContext(client, {
 assert.equal(registration.id, manifest.name);
 const external = new Set();
 const plugin = registration.factory(name => { external.add(name); return {}; });
-assert.deepEqual([...external], ['react']);
+assert.deepEqual([...external].sort(), ['react', 'react-dom']);
 const slots = [];
 const cleanups = [];
 plugin.apply({

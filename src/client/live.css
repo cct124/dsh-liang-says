@@ -1,15 +1,18 @@
-/* Use the resident conversation's box, excluding navigation, rightbar and window chrome. */
-[data-slot="main.conversation"] > [data-phase] { anchor-name: --lx-conversation; }
+/* Keep the artwork inside the conversation, below its resident composer and menus. */
+[data-slot="main.conversation"] > [data-phase]:has(> .lx-live-stage .lx-overlay) { isolation: isolate; }
+[data-slot="main.conversation"] > [data-phase]:has(> .lx-live-stage .lx-overlay) [data-composer-seat] {
+  z-index: 11;
+}
+/* The active seat already uses sticky/absolute positioning owned by DSH. */
+[data-slot="main.conversation"] > [data-phase="hero"]:has(> .lx-live-stage .lx-overlay) [data-composer-seat] { position: relative; }
 .lx-live-stage {
-  position: fixed;
-  position-anchor: --lx-conversation;
-  left: anchor(left, 0px);
-  top: anchor(top, 0px);
-  width: anchor-size(width, 0px);
-  height: anchor-size(height, 0px);
+  position: absolute;
+  inset: 0;
+  z-index: 10;
   overflow: hidden;
   container-type: size;
   pointer-events: none !important;
 }
 .lx-live-stage .lx-overlay { pointer-events: auto; }
+.lx-live-stage .lx-dismiss { bottom: calc(var(--lx-composer-height, 0px) + 22px); }
 .lx-live-error { position: absolute; bottom: 12px; right: 12px; pointer-events: auto; }
