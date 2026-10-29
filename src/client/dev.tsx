@@ -12,8 +12,6 @@ import artworkCss from './artwork.css';
 import { installLiang } from './live.tsx';
 import { LiangToggle } from './toggle.tsx';
 import type { LiangPreference } from '../core/preference.ts';
-import { isComposerTyping } from './composer-activity.ts';
-import { useComposerTyping } from './use-composer-typing.ts';
 
 const NS = 'liang.preview';
 const PANEL = 'liang-preview';
@@ -24,7 +22,7 @@ const reviewEntries: Record<string, { verification: { status: string; locators: 
 export const inject = ['slots', 'locale'];
 export function apply(ctx: DshClientContext): void {
   const preference = installLiang(ctx);
-  const simulation = new Simulation(new QuotePicker(quotes), Math.random, () => !isComposerTyping());
+  const simulation = new Simulation(new QuotePicker(quotes));
   simulation.setEnabled(preference.getSnapshot());
   ctx.effect(() => preference.subscribe(() => simulation.setEnabled(preference.getSnapshot())), 'liang: preview preference');
   ctx.effect(() => ctx.locale.register(NS, { zh, en }), 'liang: preview translations');
@@ -46,7 +44,6 @@ function SunIcon({ size = 18 }: { size?: number }) {
 
 function Preview({ simulation, preference, t }: { simulation: Simulation; preference: LiangPreference; t: Translate }) {
   const state = React.useSyncExternalStore(simulation.subscribe, simulation.getSnapshot);
-  const userTyping = useComposerTyping();
   const [library, setLibrary] = React.useState(false);
   const [search, setSearch] = React.useState('');
   const [sample, setSample] = React.useState('random');
@@ -57,16 +54,9 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
   const dismiss = React.useCallback(() => simulation.dismiss(), [simulation]);
   const onError = React.useCallback((message: string) => setError(message), []);
 
-  React.useLayoutEffect(() => {
-    const wasVisible = simulation.getSnapshot().visible;
-    const visible = !document.hidden && !userTyping;
-    simulation.setVisible(visible);
-    if (visible && !wasVisible && isTaskRunning(simulation.getSnapshot().phase)) simulation.show();
-  }, [simulation, userTyping]);
-
   React.useEffect(() => {
     let previous = performance.now();
-    const visibility = () => { previous = performance.now(); simulation.setVisible(!document.hidden && !isComposerTyping()); };
+    const visibility = () => { previous = performance.now(); simulation.setVisible(!document.hidden); };
     visibility();
     const timer = setInterval(() => {
       const now = performance.now();
@@ -108,7 +98,7 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
         <p className="lx-state-hint">{!state.enabled ? t('disabledHint') : t((state.phase + 'Hint') as 'idleHint')}</p>
       </div>
       <div className="lx-stage-footer"><span>{quotes.length} {t('items')} · 2019—2026</span><span>{t('shown')} {state.shown} {t('items')}</span></div>
-      {state.enabled && !userTyping && <QuoteOverlay request={state.request} commit={commit} onEntered={onEntered} dismiss={dismiss} reducedMotion={reduced} closeLabel={t('close')} onError={onError} />}
+      {state.enabled && <QuoteOverlay request={state.request} commit={commit} onEntered={onEntered} dismiss={dismiss} reducedMotion={reduced} closeLabel={t('close')} onError={onError} />}
     </div>
     <div className="lx-console">
       <div className="lx-console-top"><div className="lx-console-title"><span className="lx-dev-tag">DEV</span><span>{t('state')}</span></div>
@@ -130,12 +120,6 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
       <div className="lx-timing"><span>{t('countdown')} <strong>{state.pending ? t('gathering') : active ? String(countdown).padStart(2, '0') + 's' : t('paused')}</strong></span>
         <div className="lx-track"><div style={{ width: (state.elapsedMs / state.durationMs * 100) + '%' }} /></div>
         <label className="lx-motion"><input type="checkbox" checked={reduced} onChange={event => setReduced(event.target.checked)} />{t('reduced')}</label>
-      </div>
-      <div className="lx-input-test">
-        <label htmlFor="lx-test-composer">{t('typingTest')}</label>
-        <div id="lx-test-composer" data-composer-input contentEditable suppressContentEditableWarning
-          role="textbox" aria-multiline="true" aria-label={t('typingTest')} />
-        <span role="status">{t(userTyping ? 'typingPaused' : 'typingHelp')}</span>
       </div>
       {current && <div className="lx-quote-info"><span>{t('selected')}: {current.id}</span><span>{t('score')} {current.classicScore}</span>
         <span>{t('hold')}: {state.durationMs / 1000} {t('seconds')}</span>

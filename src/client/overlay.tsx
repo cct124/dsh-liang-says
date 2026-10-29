@@ -122,10 +122,15 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
   React.useEffect(() => {
     if (!request) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') { event.preventDefault(); event.stopPropagation(); dismiss(); }
+      if (event.key !== 'Escape' || event.defaultPrevented || event.isComposing) return;
+      // Editing and host popovers keep their own keyboard behavior above the artwork.
+      if (event.target instanceof Element && event.target.closest(
+        '[data-composer-seat], [contenteditable="true"], input, textarea, select, [role="menu"], [role="listbox"], [role="dialog"]',
+      )) return;
+      event.preventDefault(); dismiss();
     };
-    document.addEventListener('keydown', onKey, true);
-    return () => { document.removeEventListener('keydown', onKey, true); };
+    document.addEventListener('keydown', onKey);
+    return () => { document.removeEventListener('keydown', onKey); };
   }, [request, dismiss]);
 
   if (!quote) return null;

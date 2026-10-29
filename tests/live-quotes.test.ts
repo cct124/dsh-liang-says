@@ -35,7 +35,7 @@ test('denied browser storage keeps a working in-memory switch', () => {
 const setup = () => {
   const simulation = new Simulation(new QuotePicker([{ id: 'a', text: '测试文案', classicScore: 80 }]));
   return { simulation, live: new LiveQuotes(simulation), state: {
-    sessionId: 'session-a', running: true, enabled: true, visible: true, waitingForUser: false, userTyping: false,
+    sessionId: 'session-a', running: true, enabled: true, visible: true, waitingForUser: false,
   } satisfies LiveState };
 };
 
@@ -59,7 +59,7 @@ test('live running state opens quotes independently of preset; off cancels entra
 test('navigation and user interactions hide quotes, then restore only a running foreground session', () => {
   const { live, simulation, state } = setup();
   live.sync(state);
-  for (const hidden of [{ visible: false }, { waitingForUser: true }, { userTyping: true }]) {
+  for (const hidden of [{ visible: false }, { waitingForUser: true }]) {
     live.sync({ ...state, ...hidden });
     assert.equal(simulation.getSnapshot().request, null);
     simulation.advance(60_000);
@@ -73,40 +73,6 @@ test('navigation and user interactions hide quotes, then restore only a running 
   assert.equal(simulation.commit(previous), false);
   live.sync({ ...state, sessionId: undefined });
   assert.equal(simulation.getSnapshot().request, null);
-});
-
-test('typing blocks initial display and recurrence without consuming quotes; blur resumes only a running task', () => {
-  const { live, simulation, state } = setup();
-  live.sync({ ...state, userTyping: true });
-  simulation.advance(120_000);
-  assert.equal(simulation.getSnapshot().request, null);
-  assert.equal(simulation.getSnapshot().shown, 0);
-  live.sync(state);
-  const ticket = simulation.getSnapshot().request!.ticket;
-  live.sync({ ...state, userTyping: true });
-  assert.equal(simulation.commit(ticket), false);
-  live.sync({ ...state, userTyping: true, running: false });
-  live.sync({ ...state, running: false });
-  assert.equal(simulation.getSnapshot().request, null);
-});
-
-test('the last-moment guard prevents a quote and sound from starting while async entrance is pending', () => {
-  let typing = true;
-  const simulation = new Simulation(new QuotePicker([{ id: 'a', text: '测试', classicScore: 80 }]), () => 0, () => !typing);
-  simulation.setPhase('thinking');
-  assert.equal(simulation.getSnapshot().request, null);
-  typing = false;
-  simulation.show();
-  const ticket = simulation.getSnapshot().request!.ticket;
-  typing = true;
-  assert.equal(simulation.commit(ticket), false);
-  assert.equal(simulation.getSnapshot().shown, 0);
-  assert.equal(simulation.getSnapshot().pending, false);
-  simulation.advance(120_000);
-  assert.equal(simulation.getSnapshot().request, null);
-  typing = false;
-  simulation.advance(100);
-  assert.ok(simulation.getSnapshot().request);
 });
 
 test('status rerenders do not restart an entrance or the reading clock', () => {

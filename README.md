@@ -8,15 +8,15 @@ TypeScript / React 插件，在任意模式的任务运行期间展示梁文锋�
 
 ## 安装与使用
 
-当前准备版本为 `0.1.1`，是否已发布以 npm / GitHub Release 为准。已适配 DeepSeek Harness `0.2.1-rc.3` Web。取得发行包后，在包所在目录运行：
+当前准备版本为 `0.1.2`，是否已发布以 npm / GitHub Release 为准。已适配 DeepSeek Harness `0.2.1-rc.3` Web。取得发行包后，在包所在目录运行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-liang-says-0.1.1.tgz
+dsh plugin --profile web add ./dsh-liang-says-0.1.2.tgz
 ```
 
 安装后重启对应的 DSH Web profile。输入框底部的“梁选”开关默认开启，开始任务即可展示。开关关闭后不再展示，也不播放音效。正式包仅包含真实会话功能；侧栏“梁选预览”仅供开发构建使用。
 
-输入框中有非空白文字且焦点仍在该输入框时，梁选会暂停弹窗和音效，包括正在准备的入场。清空输入或移开焦点后缓冲 0.25 秒，当前任务仍在运行才恢复展示，避免打断刚发生的点击；仅有未聚焦的草稿、空输入框或其他位置的搜索框不会触发输入保护。
+输入面板及其附件、权限、模型选择菜单位于梁选弹窗上方，可以随时输入和操作。聚焦、输入、清空或失焦都不会暂停弹窗和音效。输入框及菜单优先处理自己的 Esc 按键；点击文案区域或收起按钮仍可关闭当前弹窗。
 
 也可在 DSH「添加插件」中填写已发布的 npm 包名 `dsh-liang-says`，或填写 Git 仓库地址 `https://github.com/cct124/dsh-liang-says`。Git 直装需要包含本次结构调整的提交；旧的 `v0.1.0` 源码标签仍不支持直装。Git 安装时包管理器先安装构建依赖，再运行 `prepare` 生成正式运行文件；若 DSH / pnpm 提示审批 Git 构建脚本，检查来源后允许该仓库的构建并重试。需要 Node.js >= 24.9 和可访问依赖注册表的网络。
 
@@ -51,10 +51,9 @@ npm run dsh:start
 - 点击弹层任意位置或 Esc 关闭；任务仍运行时，等待本条设定的完整时长再弹出下一条。
 - 思考、工具、回答之间切换不会重置计时或换句；结束、离开页面清理本轮计时。
 - 后台页面暂停，不补弹；减少动态效果模式保留淡入淡出。
-- 「输入保护测试」框复用 DSH 编辑器的识别标记：开始模拟任务，输入文字并保持焦点即可测试暂停；清空或失焦恢复。不会发送消息。
 - 语录库展示经典分、当前出现分和下一次抽中概率；操控面板展示本次停留时长和倒计时。
 
-真实会话通过 `conversation.input.left` 挂载开关，通过 `shell.overlay` 展示弹窗，并订阅 `useSessions`、`useSessionStatus`、`usePanelInfo` 标准状态。浮层使用 `main.conversation` 的实际边界作为 CSS 定位锚点，仅覆盖会话面板；侧栏展开、收起、拖动宽度或窗口缩放时跟随布局，不覆盖左侧导航、右侧文件面板与窗口顶栏。原生预览通过 `main` 与 `sidebar.panellist` 挂载，复用相同的开关偏好、`QuoteOverlay` 与抽选逻辑；底部操控区仅在开发构建中存在。
+真实会话通过 `conversation.input.left` 挂载开关，通过 `shell.overlay` 管理弹窗生命周期，并订阅 `useSessions`、`useSessionStatus`、`usePanelInfo` 标准状态。弹窗通过 React portal 渲染到 `main.conversation` 内，只覆盖会话面板，层级低于原生输入面板及其菜单；不搬动或重新创建宿主编辑器。侧栏展开、收起、拖动宽度或窗口缩放时跟随布局，不覆盖左侧导航、右侧文件面板与窗口顶栏。原生预览通过 `main` 与 `sidebar.panellist` 挂载，复用相同的开关偏好、`QuoteOverlay` 与抽选逻辑；底部操控区仅在开发构建中存在。
 
 视觉参数：黑色底层不透明度 60%（40% 透明）；光芒单独保持 50% 不透明度，深浅色模式的人像均为 85% 不透明，无底部渐隐，父层不再降低人像透明度；文字保持不透明。背景入场约 600ms。正文与落款共享同一批粒子入场：风从左侧带入文字附近的细粒子，每个粒子按独立的时间和速度渐显，顺风向右移动并轻微上下翻卷，随后减速落到对应笔画上；文字由左向右逐渐成形，约 2.4 秒后衔接清晰的正文，与出场向右吹散的风向一致。深色模式粒子在暖白、浅金、淡灰金之间随机取细微色差，颜色在单次动画内保持稳定；全部粒子落定后，在隔离的文字层内以 plus-lighter 合成方式交接给正文，避免普通透明度交叉淡化造成中途变暗，同时恢复正文原色。落款“—— 梁文锋”位于文案段落右下角，右侧对齐正文排版后的实际右边缘（多行时取各行最右侧），切换文案和调整窗口尺寸时自动更新，距正文下方 22px（紧凑布局为 12px）。
 
@@ -96,7 +95,7 @@ npm run quotes:check
 - `npm run build:dev` → `dist/dev/`，包名 `dsh-liang-says-dev`，含开发预览面板。
 - `npm run build` → `dist/release/`，包名 `dsh-liang-says`，包含真实会话开关与弹层，不含开发模拟器入口。
 - `npm run pack:dev` → 本地测试用 `.tgz`。不要对仓库根目录直接执行发布；应发布经过检查的正式输出目录。
-- `npm run release:prepare` → 校验语录、类型和测试，构建正式包，检查实际客户端注册与包内文件，然后生成 `dist/dsh-liang-says-0.1.1.tgz`、`dist/SHA256SUMS` 和 `dist/release-info.json`。
+- `npm run release:prepare` → 校验语录、类型和测试，构建正式包，检查实际客户端注册与包内文件，然后生成 `dist/dsh-liang-says-0.1.2.tgz`、`dist/SHA256SUMS` 和 `dist/release-info.json`。
 
 交付格式是 DSH 原生 npm bundle：宿主入口、客户端 JavaScript、运行时数据、locale、图标与 `cordis.patch.yml`，附带 README、更新记录、MIT 许可证和音效来源说明。仓库根目录及开发包保留 `private: true`，仅正式输出清单允许发布。仓库通过根清单的 `exports` 和 `dsh.bundle.patch` 指向 `dist/release`，Git 安装的 prepare 生成这些文件，Git 打包仅包含正式输出。发行工作流仍使用检查过的独立 `.tgz`，无需在 Git 中提交生成文件。
 
@@ -106,7 +105,7 @@ GitHub Actions 分两条流程：PR 合并到 `main` 后自动检查并将测试
 
 本地 `release:prepare` 只做检查和打包。首次 npm 包初始化、可信发布设置及日常发版操作见 [RELEASING.md](https://github.com/cct124/dsh-liang-says/blob/main/RELEASING.md)，版本内容见 [CHANGELOG.md](https://github.com/cct124/dsh-liang-says/blob/main/CHANGELOG.md)。
 
-React 由 DSH 浏览器模块表提供，未打包第二份 React。构建用 esbuild 将 TS/TSX 编译为 DSH 的 `window.__ModuleLoader__.load` 格式。图片直接包含在客户端资源内，预览不依赖外部图片或 CDN。
+React 与 ReactDOM 由 DSH 浏览器模块表提供，未打包第二份运行时。构建用 esbuild 将 TS/TSX 编译为 DSH 的 `window.__ModuleLoader__.load` 格式。图片直接包含在客户端资源内，预览不依赖外部图片或 CDN。
 
 ```powershell
 npm test
