@@ -29,7 +29,7 @@ git diff --check
 
 输出文件：
 
-- `dist/dsh-liang-says-0.1.3.tgz`：当前待测试版本的正式包；生成文件不代表已经发布。
+- `dist/dsh-liang-says-0.1.4.tgz`：当前待测试版本的正式包；生成文件不代表已经发布。
 - `dist/SHA256SUMS`：安装包 SHA-256。
 - `dist/release-info.json`：版本、文件清单、包大小及 npm integrity。
 - `dist/release-notes.md`：`release:metadata` 从 CHANGELOG 当前版本段落提取的发布说明。
@@ -41,7 +41,7 @@ git diff --check
 在测试用 DSH profile 中安装 `.tgz` 并重启，确认默认开关、任务开始/结束、关闭音效、权限等待、会话切换、深浅色模式与面板边界。不要与开发包同时启用。
 
 ```powershell
-dsh plugin --profile web add ./dist/dsh-liang-says-0.1.3.tgz
+dsh plugin --profile web add ./dist/dsh-liang-says-0.1.4.tgz
 ```
 
 `engines.dsh` 声明为 `0.2.x`，DSH 的范围检查包含 `0.2.1-rc.5` 等预发布版本，不包括 `0.3.x`。界面已验证 `0.2.1-rc.3` 和 `0.2.2-alpha.2`（主线提交 `ce7073d512`）源码 Web 实例；`rc.5` 的完整界面及原生 Desktop 尚未验证。发布时确认根目录、锁文件及构建包的版本范围一致，并在更新记录中区分范围声明与实际验证的宿主版本。
@@ -92,6 +92,8 @@ git push origin v0.1.0
 
 - 测试、标签或版本校验失败：停止发布。修复后通过新的合并提交和正确版本标签发版。
 - npm 返回已存在的版本：仅当 registry 的 `dist.integrity` 与当前 `.tgz` 完全一致时跳过；不同内容直接失败，不能覆盖同版本。
+- npm 接受上传后暂未公开版本：每 15 秒检查一次，最多等待约 30 分钟；期间不重复上传，通过完整性校验后继续 GitHub Release。超时仍可在 npm 审核完成后重跑失败 job。
+- GitHub 新建草稿暂未出现在 API 中：每 5 秒重新查询，最多等待约 1 分钟，不重复创建草稿。
 - npm 已成功、GitHub 失败：在 Actions 中重跑失败 job。它下载原构建产物，不重新打包，核对 npm 后继续 GitHub 发布。
 - GitHub 草稿只传了一部分附件：保留并核对已有附件，补传缺少的文件，全部核对后公开。已经公开的 Release 仅验证，不覆盖或增删附件。
 - registry/API 请求失败不会被当作“版本不存在”。OIDC 配置、认证或包名权限错误需要维护者修正后重跑。

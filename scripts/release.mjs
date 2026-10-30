@@ -49,7 +49,13 @@ if (command === 'metadata') {
     assert(process.env.npm_execpath, 'Run via npm run release:npm.');
     console.log(await publishNpm(info, () => run(process.execPath, [process.env.npm_execpath,
       'publish', `./dist/${metadata.filename}`, '--access', 'public', '--tag', metadata.npmTag,
-      '--registry', REGISTRY, '--ignore-scripts'])));
+      '--registry', REGISTRY, '--ignore-scripts']), {
+      onPending: attempt => {
+        if (attempt === 1 || attempt % 4 === 0) {
+          console.log(`npm accepted the upload; waiting for registry visibility (${attempt}/120).`);
+        }
+      },
+    }));
   } else {
     assert.equal(await npmReleaseState(info), 'published', 'Verify npm publication before creating the GitHub release.');
     assert(process.env.GH_TOKEN, 'GH_TOKEN is required.');

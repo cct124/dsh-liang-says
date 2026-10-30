@@ -40,12 +40,18 @@ export async function npmReleaseState(info, request = fetch) {
   return 'published';
 }
 
-export async function publishNpm(info, publish, { request = fetch, wait = () => new Promise(resolve => setTimeout(resolve, 2000)) } = {}) {
+export async function publishNpm(info, publish, {
+  request = fetch, wait = () => new Promise(resolve => setTimeout(resolve, 15_000)), onPending = () => {},
+} = {}) {
   if (await npmReleaseState(info, request) === 'published') return 'already-published';
   await publish();
-  for (let attempt = 0; attempt < 6; attempt++) {
+  // npm can accept an upload while automated validation still hides the version.
+  for (let attempt = 0; attempt <= 120; attempt++) {
     if (await npmReleaseState(info, request) === 'published') return 'published';
-    if (attempt < 5) await wait();
+    if (attempt < 120) {
+      onPending(attempt + 1);
+      await wait();
+    }
   }
   throw new Error('npm publish returned success, but the registry has not exposed this version yet. Re-run to verify.');
 }
@@ -64,12 +70,19 @@ async function findGithubRelease(tag, api) {
 }
 
 /** Resume a partial draft, but never replace an existing asset or public release. */
-export async function publishGithub(metadata, assets, { api, run }) {
+export async function publishGithub(metadata, assets, {
+  api, run, wait = () => new Promise(resolve => setTimeout(resolve, 5000)),
+}) {
   let release = await findGithubRelease(metadata.tag, api);
   if (!release) {
     run(['release', 'create', metadata.tag, '--verify-tag', '--draft', '--title', metadata.tag,
       '--notes-file', 'dist/release-notes.md', ...(metadata.prerelease ? ['--prerelease'] : [])]);
-    release = await findGithubRelease(metadata.tag, api);
+    // Draft creation can precede visibility in the authenticated release list.
+    for (let attempt = 0; attempt <= 12; attempt++) {
+      release = await findGithubRelease(metadata.tag, api);
+      if (release) break;
+      if (attempt < 12) await wait();
+    }
     assert(release?.draft, 'GitHub did not create a draft release.');
   }
   const releasePath = `releases/${release.id}`;
