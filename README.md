@@ -8,10 +8,10 @@ TypeScript / React 插件，在任意模式的任务运行期间展示梁文锋�
 
 ## 安装与使用
 
-当前准备版本为 `0.1.2`，是否已发布以 npm / GitHub Release 为准。已适配 DeepSeek Harness `0.2.1-rc.3` Web。取得发行包后，在包所在目录运行：
+当前版本为 `0.1.3`，发布状态以 npm / GitHub Release 为准。插件的 DSH 版本范围声明为 `0.2.x`，包括 `0.2.1-rc.5` 等预发布版本；已在 `0.2.1-rc.3` 和 `0.2.2-alpha.2` 源码 Web 实例中验证。`0.1.2` 及更早版本仍限定为 `0.2.1-rc.3`。取得发行包后，在包所在目录运行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-liang-says-0.1.2.tgz
+dsh plugin --profile web add ./dsh-liang-says-0.1.3.tgz
 ```
 
 安装后重启对应的 DSH Web profile。输入框底部的“梁选”开关默认开启，开始任务即可展示。开关关闭后不再展示，也不播放音效。正式包仅包含真实会话功能；侧栏“梁选预览”仅供开发构建使用。
@@ -26,7 +26,7 @@ dsh plugin --profile web add ./dsh-liang-says-0.1.2.tgz
 
 ## 本地开发
 
-需要 Node.js >= 24.9，以及已安装依赖、完成构建的 DeepSeek Harness 源码。本次适配版本为 `0.2.1-rc.3`。源码默认位于本项目的同级 `deepseek-harness`，可通过 `DSH_SOURCE` 指定其他位置。
+需要 Node.js >= 24.9，以及已安装依赖、完成构建的 DeepSeek Harness `0.2.x` 源码。最近一次界面验证使用 `0.2.2-alpha.2` 主线提交 `ce7073d512`。源码默认位于本项目的同级 `deepseek-harness`，可通过 `DSH_SOURCE` 指定其他位置。
 
 ```powershell
 npm ci --ignore-scripts
@@ -95,7 +95,7 @@ npm run quotes:check
 - `npm run build:dev` → `dist/dev/`，包名 `dsh-liang-says-dev`，含开发预览面板。
 - `npm run build` → `dist/release/`，包名 `dsh-liang-says`，包含真实会话开关与弹层，不含开发模拟器入口。
 - `npm run pack:dev` → 本地测试用 `.tgz`。不要对仓库根目录直接执行发布；应发布经过检查的正式输出目录。
-- `npm run release:prepare` → 校验语录、类型和测试，构建正式包，检查实际客户端注册与包内文件，然后生成 `dist/dsh-liang-says-0.1.2.tgz`、`dist/SHA256SUMS` 和 `dist/release-info.json`。
+- `npm run release:prepare` → 校验语录、类型和测试，构建正式包，检查实际客户端注册与包内文件，然后生成 `dist/dsh-liang-says-0.1.3.tgz`、`dist/SHA256SUMS` 和 `dist/release-info.json`。
 
 交付格式是 DSH 原生 npm bundle：宿主入口、客户端 JavaScript、运行时数据、locale、图标与 `cordis.patch.yml`，附带 README、更新记录、MIT 许可证和音效来源说明。仓库根目录及开发包保留 `private: true`，仅正式输出清单允许发布。仓库通过根清单的 `exports` 和 `dsh.bundle.patch` 指向 `dist/release`，Git 安装的 prepare 生成这些文件，Git 打包仅包含正式输出。发行工作流仍使用检查过的独立 `.tgz`，无需在 Git 中提交生成文件。
 
@@ -114,7 +114,7 @@ npm run typecheck
 
 测试覆盖抽选、冷却衰减、各运行阶段连续计时、随机时长范围及分数偏置、入场计时边界、隐藏页面、连续去重、取消竞态、粒子颜色交接、独立行飘动和语录校订。打包时另行检查正式客户端入口注册、React 外置、资源内嵌、开发面板排除及发布文件清单。
 
-测试宿主为 `0.2.1-rc.3` 源码 Web 实例；原生 Desktop 与其他宿主版本尚未验证。
+界面已在 `0.2.1-rc.3` 和 `0.2.2-alpha.2` 源码 Web 实例中验证。后者使用主线提交 `ce7073d512`，通过本地 Messages 模拟服务驱动真实会话，检查任务开始、停止和完成、输入草稿、菜单层级、Esc、开关、深浅色主题及两侧面板边界，未调用远程模型。`engines.dsh` 声明为 `0.2.x`；版本范围检查包含 `0.2.1-rc.5` 等预发布版本，不包括 `0.3.x`。`rc.5` 的完整界面及原生 Desktop 尚未验证。
 
 ## 资源与许可
 
