@@ -117,6 +117,34 @@ test('new npm releases publish once and wait for matching registry integrity', a
 });
 
 const assets = [{ name: metadata.filename, bytes: archive }, { name: 'SHA256SUMS', bytes: Buffer.from(sums) }];
+test('npm validation can take minutes without repeating the upload', async () => {
+  let requests = 0;
+  let publishes = 0;
+  let waits = 0;
+  assert.equal(await publishNpm(info, () => publishes++, {
+    request: () => ++requests < 85 ? new Response('', { status: 404 }) : published(),
+    wait: async () => { waits++; },
+  }), 'published');
+  assert.equal(publishes, 1);
+  assert.equal(waits, 83);
+});
+
+test('npm stops after its visibility window and still rejects different published content', async () => {
+  let publishes = 0;
+  let waits = 0;
+  await assert.rejects(publishNpm(info, () => publishes++, {
+    request: () => new Response('', { status: 404 }), wait: async () => { waits++; },
+  }), /not exposed/);
+  assert.equal(publishes, 1);
+  assert.equal(waits, 120);
+  let requests = 0;
+  await assert.rejects(publishNpm(info, () => {}, {
+    request: () => ++requests < 3 ? new Response('', { status: 404 })
+      : Response.json({ dist: { integrity: 'different' } }),
+    wait: async () => {},
+  }), /different content/);
+});
+
 function githubFixture(initial) {
   let release = initial && { id: 42, tag_name: metadata.tag, ...structuredClone(initial) };
   const commands = [];
@@ -158,6 +186,33 @@ test('GitHub reruns complete a partial draft and do not replace verified assets'
   assert.equal(await publishGithub(metadata, assets, fixture), 'published');
   assert.deepEqual(fixture.commands.map(command => command[1]), ['upload', 'edit']);
   assert.equal(fixture.commands[0][3], 'dist/SHA256SUMS');
+});
+
+test('GitHub waits for a newly created draft without creating it twice', async () => {
+  const fixture = githubFixture(null);
+  let waits = 0;
+  assert.equal(await publishGithub(metadata, assets, {
+    ...fixture,
+    api: async path => {
+      if (path.startsWith('releases?') && waits < 2) return [];
+      return fixture.api(path);
+    },
+    wait: async () => { waits++; },
+  }), 'published');
+  assert.equal(waits, 2);
+  assert.deepEqual(fixture.commands.map(command => command[1]), ['create', 'upload', 'upload', 'edit']);
+});
+
+test('GitHub stops when a created draft never becomes visible', async () => {
+  const fixture = githubFixture(null);
+  let waits = 0;
+  await assert.rejects(publishGithub(metadata, assets, {
+    ...fixture,
+    api: async path => path.startsWith('releases?') ? [] : fixture.api(path),
+    wait: async () => { waits++; },
+  }), /did not create a draft/);
+  assert.equal(waits, 12);
+  assert.deepEqual(fixture.commands.map(command => command[1]), ['create']);
 });
 
 test('GitHub finds an older draft on subsequent release pages without creating a duplicate', async () => {

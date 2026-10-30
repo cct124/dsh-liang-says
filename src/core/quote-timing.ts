@@ -1,7 +1,7 @@
-export const MIN_QUOTE_MS = 20_000;
-export const MAX_QUOTE_MS = 45_000;
+export const MIN_QUOTE_MS = 10_000;
+export const MAX_QUOTE_MS = 20_000;
 
-/** A score-dependent baseline plus 0–10 seconds of fresh jitter per display. */
+/** A score-dependent baseline plus 0–4 seconds of fresh jitter per display. */
 export function quoteDurationMs(classicScore: number, random = Math.random): number {
   if (!Number.isFinite(classicScore) || classicScore < 1 || classicScore > 100) {
     throw new Error('Classic score must be between 1 and 100.');

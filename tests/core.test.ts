@@ -33,17 +33,21 @@ test('one-quote catalogs stay selectable and choosing alone consumes nothing', (
   picker.choose();
   assert.equal(picker.weights()[0]!.penalty, 6);
 });
-test('durations stay within 20–45 seconds and higher scores bias the same draw longer', () => {
+test('durations stay within 10–20 seconds and higher scores bias the same draw longer', () => {
   for (let score = 1; score <= 100; score++) {
     for (const draw of [0, .25, .5, .75, 1]) {
       const duration = quoteDurationMs(score, () => draw);
       assert.ok(duration >= MIN_QUOTE_MS && duration <= MAX_QUOTE_MS);
-      if (score <= 90) assert.ok(quoteDurationMs(score + 10, () => draw) > duration);
+      if (score <= 90) assert.ok(quoteDurationMs(score + 10, () => draw) >= duration);
     }
   }
   assert.equal(quoteDurationMs(1, () => 0), MIN_QUOTE_MS);
   assert.equal(quoteDurationMs(100, () => 1), MAX_QUOTE_MS);
-  assert.equal(MAX_QUOTE_MS, 45_000);
+  assert.equal(MIN_QUOTE_MS, 10_000);
+  assert.equal(MAX_QUOTE_MS, 20_000);
+  for (const draw of [0, .5, 1]) {
+    assert.ok(quoteDurationMs(100, () => draw) > quoteDurationMs(1, () => draw));
+  }
   assert.notEqual(quoteDurationMs(90, () => 0), quoteDurationMs(90, () => 1));
 });
 
@@ -76,11 +80,11 @@ test('phase changes preserve the quote, elapsed time and sampled duration', () =
   const simulation = new Simulation(new QuotePicker(quotes, () => 0), () => { draws++; return .5; });
   simulation.setPhase('thinking'); finishEntrance(simulation);
   const request = simulation.getSnapshot().request!;
-  simulation.advance(6000);
-  simulation.setPhase('tool'); simulation.advance(6000);
-  simulation.setPhase('answer'); simulation.advance(6000);
+  simulation.advance(3000);
+  simulation.setPhase('tool'); simulation.advance(3000);
+  simulation.setPhase('answer'); simulation.advance(3000);
   assert.equal(simulation.getSnapshot().request, request);
-  assert.equal(simulation.getSnapshot().elapsedMs, 18_000);
+  assert.equal(simulation.getSnapshot().elapsedMs, 9000);
   assert.equal(draws, 1);
 });
 
