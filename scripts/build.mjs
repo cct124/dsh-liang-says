@@ -1,5 +1,5 @@
 import { build, context } from 'esbuild';
-import { mkdir, writeFile, copyFile, readFile } from 'node:fs/promises';
+import { mkdir, writeFile, copyFile, readFile, readdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 
@@ -47,7 +47,35 @@ const options = {
   outfile: resolve(output, 'client.js'), bundle: true, format: 'cjs', platform: 'browser', target: 'chrome120',
   external: ['react', 'react-dom'], jsx: 'transform', loader: { '.png': 'dataurl', '.mp3': 'dataurl', '.css': 'text' },
   define: { 'process.env.NODE_ENV': JSON.stringify(dev ? 'development' : 'production') },
-  minify: !dev, sourcemap: dev ? 'inline' : false,
+  minify: !dev, sourcemap: dev ? 'inline' : false, metafile: true, legalComments: 'inline',
+  plugins: [{ name: 'bundled-license-notices', setup(builder) {
+    builder.onEnd(async result => {
+      if (result.errors.length || !result.metafile) return;
+      const included = Object.values(result.metafile.outputs).flatMap(output =>
+        Object.entries(output.inputs).filter(([, input]) => input.bytesInOutput > 0).map(([path]) => path));
+      const packages = new Set(included.flatMap(path => {
+        const match = path.replaceAll('\\', '/').match(/(?:^|\/)node_modules\/((?:@[^/]+\/)?[^/]+)/);
+        return match ? [match[1]] : [];
+      }));
+      let notices = await readFile(resolve(root, 'asset/sfx/README.md'), 'utf8');
+      notices += '\n\n# Bundled software licenses\n\nThe following libraries are bundled into client.js.\n';
+      for (const name of [...packages].sort()) {
+        const directory = resolve(root, 'node_modules', name);
+        const manifest = JSON.parse(await readFile(resolve(directory, 'package.json'), 'utf8'));
+        const files = (await readdir(directory)).filter(file => /^licen[cs]e(?:[.-].*)?$/i.test(file));
+        // @pixi/colord 2.9.6 omits LICENSE.md from its npm tarball. Keep its upstream notice offline.
+        if (!files.length && name === '@pixi/colord') {
+          notices += `\n## ${name} ${manifest.version}\n\nSource: https://github.com/pixijs/colord/blob/master/LICENSE.md\n\n`;
+          notices += '```text\n' + (await readFile(resolve(root, 'asset/licenses/pixi-colord.LICENSE.txt'), 'utf8')).trim() + '\n```\n';
+          continue;
+        }
+        if (!files.length) throw new Error(`Missing bundled license for ${name}`);
+        notices += `\n## ${name} ${manifest.version}\n`;
+        for (const file of files) notices += '\n```text\n' + (await readFile(resolve(directory, file), 'utf8')).trim() + '\n```\n';
+      }
+      await writeFile(resolve(output, 'THIRD_PARTY_NOTICES.md'), notices);
+    });
+  } }],
   banner: { js: `window.__ModuleLoader__.load({id:${JSON.stringify(name)},factory(require){const module={exports:{}};` },
   footer: { js: 'return module.exports;}});' },
 };

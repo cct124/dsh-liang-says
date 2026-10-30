@@ -23,9 +23,13 @@
     "./locale/*.json": "./dist/release/locale/*.json",
     "./icon": "./dist/release/icon.svg"
   },
-  "files": ["dist/release"],
+  "files": [
+    "dist/release"
+  ],
   "dsh": {
-    "bundle": { "patch": "./dist/release/cordis.patch.yml" },
+    "bundle": {
+      "patch": "./dist/release/cordis.patch.yml"
+    },
     "client": {
       "platform": "web",
       "immediately": true,
@@ -61,6 +65,7 @@
     "@types/react": "18.3.31",
     "@types/react-dom": "^18.3.7",
     "esbuild": "0.28.1",
+    "pixi.js": "8.22.0",
     "typescript": "6.0.3"
   }
 }
