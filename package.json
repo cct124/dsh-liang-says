@@ -1,6 +1,6 @@
 {
   "name": "dsh-liang-says",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "任意模式任务运行期间的梁选语录与视觉效果",
   "private": true,
   "license": "MIT",

@@ -8,10 +8,10 @@ TypeScript / React 插件，在任意模式的任务运行期间展示梁文锋�
 
 ## 安装与使用
 
-当前版本为 `0.1.4`，发布状态以 npm / GitHub Release 为准。插件的 DSH 版本范围声明为 `0.2.x`，包括 `0.2.1-rc.5` 等预发布版本；已在 `0.2.1-rc.3` 和 `0.2.2-alpha.2` 源码 Web 实例中验证。`0.1.2` 及更早版本仍限定为 `0.2.1-rc.3`。取得发行包后，在包所在目录运行：
+当前版本为 `0.1.5`，发布状态以 npm / GitHub Release 为准。插件的 DSH 版本范围声明为 `0.2.x`，包括 `0.2.1-rc.5` 等预发布版本；已在 `0.2.1-rc.3` 和 `0.2.2-alpha.2` 源码 Web 实例中验证。`0.1.2` 及更早版本仍限定为 `0.2.1-rc.3`。取得发行包后，在包所在目录运行：
 
 ```powershell
-dsh plugin --profile web add ./dsh-liang-says-0.1.4.tgz
+dsh plugin --profile web add ./dsh-liang-says-0.1.5.tgz
 ```
 
 安装后重启对应的 DSH Web profile。输入框底部的“梁选”开关默认开启，开始任务即可展示。开关关闭后不再展示，也不播放音效。正式包仅包含真实会话功能；侧栏“梁选预览”仅供开发构建使用。
@@ -99,7 +99,7 @@ npm run quotes:check
 - `npm run build:dev` → `dist/dev/`，包名 `dsh-liang-says-dev`，含开发预览面板。
 - `npm run build` → `dist/release/`，包名 `dsh-liang-says`，包含真实会话开关与弹层，不含开发模拟器入口。
 - `npm run pack:dev` → 本地测试用 `.tgz`。不要对仓库根目录直接执行发布；应发布经过检查的正式输出目录。
-- `npm run release:prepare` → 校验语录、类型和测试，构建正式包，检查实际客户端注册与包内文件，然后生成 `dist/dsh-liang-says-0.1.4.tgz`、`dist/SHA256SUMS` 和 `dist/release-info.json`。
+- `npm run release:prepare` → 校验语录、类型和测试，构建正式包，检查实际客户端注册与包内文件，然后生成 `dist/dsh-liang-says-0.1.5.tgz`、`dist/SHA256SUMS` 和 `dist/release-info.json`。
 
 交付格式是 DSH 原生 npm bundle：宿主入口、客户端 JavaScript、运行时数据、locale、图标与 `cordis.patch.yml`，附带 README、更新记录、MIT 许可证和音效来源说明。仓库根目录及开发包保留 `private: true`，仅正式输出清单允许发布。仓库通过根清单的 `exports` 和 `dsh.bundle.patch` 指向 `dist/release`，Git 安装的 prepare 生成这些文件，Git 打包仅包含正式输出。发行工作流仍使用检查过的独立 `.tgz`，无需在 Git 中提交生成文件。
 

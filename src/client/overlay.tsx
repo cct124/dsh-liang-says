@@ -9,11 +9,40 @@ import { playEntranceSound } from './entrance-audio.ts';
 import { startTextWind, type TextWind } from './text-wind.ts';
 import { portraitForScore } from '../core/portraits.ts';
 import { PORTRAIT_ASSETS } from './portrait-assets.ts';
-import { LiangScene } from './scene.ts';
+import { LiangScene, type PreparedText } from './scene.ts';
 
 const glyphSegmenter = new Intl.Segmenter(undefined, { granularity: 'grapheme' });
 const windGlyphs = (text: string) => Array.from(glyphSegmenter.segment(text), ({ segment, index }) =>
   /^\s+$/u.test(segment) ? segment : <span className="lx-glyph" aria-hidden="true" key={index}>{segment}</span>);
+
+function QuoteContent({ frame, contentRef, preparing = false }: {
+  frame: QuoteFrame; contentRef: React.RefObject<HTMLDivElement>; preparing?: boolean;
+}) {
+  const quote = frame.quote, presentation = quotePresentation(quote.id);
+  React.useLayoutEffect(() => {
+    const paragraph = contentRef.current!.querySelector<HTMLElement>('.lx-words')!;
+    const signature = contentRef.current!.querySelector<HTMLElement>('.lx-signature')!;
+    const fragments = Array.from(paragraph.querySelectorAll<HTMLElement>('.lx-fragment'));
+    const alignSignature = () => {
+      const right = Math.max(...fragments.map(fragment => fragment.offsetLeft + fragment.offsetWidth));
+      const margin = `${Math.max(0, paragraph.clientWidth - right)}px`;
+      if (signature.style.marginRight !== margin) signature.style.marginRight = margin;
+    };
+    alignSignature();
+    const observer = new ResizeObserver(alignSignature);
+    observer.observe(paragraph); frame.didRender();
+    return () => { observer.disconnect(); };
+  }, [frame, contentRef]);
+  return <div ref={contentRef} className={'lx-quote' + (quote.text.length > 80 ? ' lx-quote-long' : '')}
+    style={preparing ? { visibility: 'hidden' } : undefined} aria-hidden={preparing || undefined}>
+    <div className="lx-passage">
+      <p className="lx-words" aria-label={quote.text}>
+        {splitQuote(quote.text).map((text, index) => <span className="lx-fragment" data-fragment key={index} aria-hidden="true">{windGlyphs(text)}</span>)}
+      </p>
+      <p className="lx-signature" data-fragment aria-label={presentation.signature}>{windGlyphs(presentation.signature)}</p>
+    </div>
+  </div>;
+}
 
 async function play(element: Element, frames: Keyframe[], options: KeyframeAnimationOptions,
   signal: AbortSignal): Promise<void> {
@@ -42,12 +71,14 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
   const entranceAudio = React.useRef<HTMLAudioElement>(null);
   const textLayer = React.useRef<HTMLDivElement>(null);
   const content = React.useRef<HTMLDivElement>(null);
+  const preparingContent = React.useRef<HTMLDivElement>(null);
   const canvas = React.useRef<HTMLCanvasElement>(null);
   const scene = React.useRef<LiangScene | null>(null);
   const rendererFailed = React.useRef(false);
   const [gpu, setGpu] = React.useState(false);
   const wind = React.useRef<TextWind | null>(null);
   const [frame, setFrame] = React.useState<QuoteFrame | null>(null);
+  const [preparingFrame, setPreparingFrame] = React.useState<QuoteFrame | null>(null);
   const quote = frame?.quote;
   const displayed = React.useRef<Quote | null>(null);
   const reducedMotionRef = React.useRef(reducedMotion);
@@ -57,26 +88,11 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
   }, [reducedMotion]);
   React.useEffect(() => () => { scene.current?.destroy(); scene.current = null; }, []);
 
-  React.useLayoutEffect(() => {
-    if (!frame || !root.current || !textLayer.current || !content.current) return;
-    const paragraph = content.current.querySelector<HTMLElement>('.lx-words')!;
-    const signature = content.current.querySelector<HTMLElement>('.lx-signature')!;
-    const fragments = Array.from(paragraph.querySelectorAll<HTMLElement>('.lx-fragment'));
-    const alignSignature = () => {
-      // Balanced lines may leave unused width; layout offsets ignore the entrance transforms.
-      const right = Math.max(...fragments.map(fragment => fragment.offsetLeft + fragment.offsetWidth));
-      signature.style.marginRight = `${Math.max(0, paragraph.clientWidth - right)}px`;
-    };
-    alignSignature();
-    const observer = new ResizeObserver(alignSignature);
-    observer.observe(paragraph);
-    frame.didRender();
-    return () => { observer.disconnect(); };
-  }, [frame]);
-
   React.useEffect(() => {
     const abort = new AbortController();
     const { signal } = abort;
+    let prepared: PreparedText | undefined;
+    let staging: QuoteFrame | undefined;
     // Motion preferences affect the next transition without replaying the current quote.
     const reducedMotion = reducedMotionRef.current;
     async function leaveText() {
@@ -103,7 +119,22 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
         return;
       }
       const replacing = displayed.current !== null;
-      if (replacing) await leaveText();
+      if (replacing && scene.current) {
+        // Prepare the incoming layout while the old text is still dispersing.
+        // The hidden DOM uses the same wrapping/signature layout as the live text.
+        const renderer = scene.current;
+        staging = createQuoteFrame(request, signal);
+        setPreparingFrame(staging);
+        const prepare = async () => {
+          await staging!.rendered; signal.throwIfAborted();
+          if (!preparingContent.current) throw new Error('Preparation frame was removed');
+          return renderer.prepareText(preparingContent.current, signal);
+        };
+        const [leaving, preparation] = await Promise.allSettled([leaveText(), prepare()]);
+        if (preparation.status === 'fulfilled') prepared = preparation.value;
+        if (leaving.status === 'rejected') throw leaving.reason;
+        if (preparation.status === 'rejected') throw preparation.reason;
+      } else if (replacing) await leaveText();
       if (signal.aborted) return;
       const nextFrame = createQuoteFrame(request, signal);
       setFrame(nextFrame);
@@ -126,9 +157,11 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
       }
       if (scene.current) {
         scene.current.setReduced(reducedMotionRef.current);
-        scene.current.layoutText(content.current);
+        await scene.current.layoutText(content.current, signal, prepared);
+        prepared = undefined;
         if (!replacing) await scene.current.switchPortrait(request.quote.classicScore, signal);
       }
+      setPreparingFrame(current => current === staging ? null : current);
       if (!replacing && scene.current) await scene.current.fade(1, reducedMotion ? 120 : 600, signal);
       else if (!replacing) await play(root.current, [{ opacity: 0 }, { opacity: 1 }],
         { duration: reducedMotion ? 120 : 600, easing: 'ease-out' }, signal);
@@ -152,6 +185,9 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
     }
     void transition().catch(error => {
       if (!signal.aborted) { onError(error instanceof Error ? error.message : String(error)); dismiss(); }
+    }).finally(() => {
+      if (prepared) void prepared.text.dispose();
+      setPreparingFrame(current => current === staging ? null : current);
     });
     return () => { wind.current?.freeze(); wind.current = null; abort.abort(); };
   }, [request, commit, onEntered, dismiss, onError]);
@@ -171,7 +207,6 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
   }, [request, dismiss]);
 
   if (!quote) return null;
-  const presentation = quotePresentation(quote.id);
   const portraitRule = portraitForScore(quote.classicScore);
   const portrait = PORTRAIT_ASSETS[portraitRule.image]!;
   return <div ref={root} className={'lx-overlay' + (reducedMotion ? ' lx-reduced' : '') + (gpu ? ' lx-gpu' : '')}
@@ -201,14 +236,8 @@ export function QuoteOverlay({ request, commit, onEntered, dismiss, reducedMotio
       <span className="lx-edition-line" />
     </div>
     <div ref={textLayer} className="lx-text-layer">
-      <div ref={content} className={'lx-quote' + (quote.text.length > 80 ? ' lx-quote-long' : '')} key={frame!.ticket}>
-        <div className="lx-passage">
-          <p className="lx-words" aria-label={quote.text}>
-            {splitQuote(quote.text).map((text, index) => <span className="lx-fragment" data-fragment key={index} aria-hidden="true">{windGlyphs(text)}</span>)}
-          </p>
-          <p className="lx-signature" data-fragment aria-label={presentation.signature}>{windGlyphs(presentation.signature)}</p>
-        </div>
-      </div>
+      <QuoteContent frame={frame!} contentRef={content} key={frame!.ticket} />
+      {preparingFrame && <QuoteContent frame={preparingFrame} contentRef={preparingContent} preparing key={'preparing-' + preparingFrame.ticket} />}
     </div>
     <button type="button" className="lx-dismiss" onClick={event => { event.stopPropagation(); dismiss(); }}>{closeLabel} <kbd>Esc</kbd></button>
   </div>;

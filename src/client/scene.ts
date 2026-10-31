@@ -7,6 +7,8 @@ import { animateParticles } from './particle-clock.ts';
 import { SceneClock } from './scene-clock.ts';
 import { SceneText } from './scene-text.ts';
 
+export interface PreparedText { text: SceneText; revision: number }
+
 async function loadImage(src: string, signal: AbortSignal): Promise<HTMLImageElement> {
   return new Promise((resolve, reject) => {
     const image = new Image();
@@ -29,7 +31,8 @@ export class LiangScene {
   private readonly renderer = new WebGLRenderer<HTMLCanvasElement>();
   private readonly stage = new Container();
   private readonly art = new Sprite(Texture.WHITE);
-  private readonly text = new SceneText();
+  private text = new SceneText();
+  private readonly retiring = new Set<SceneText>();
   private readonly lifetime = new AbortController();
   private readonly portraits = new Map<string, Texture>();
   private artFilter!: Filter;
@@ -41,10 +44,13 @@ export class LiangScene {
   private to = PORTRAITS[0]!;
   private width = 1;
   private height = 1;
+  private resolution = 1;
   private elapsed = 0;
   private reduced = false;
   private content: HTMLElement | null = null;
   private layoutDirty = false;
+  private layoutRevision = 0;
+  private relayoutRunning = false;
   private textVisible = false;
   private textMode: 'gather' | 'disperse' | null = null;
   private textProgress = 0;
@@ -80,6 +86,7 @@ export class LiangScene {
       antialias: false, powerPreference: 'low-power' });
     this.initialized = true;
     combined.throwIfAborted();
+    for (const texture of this.portraits.values()) this.renderer.texture.initSource(texture.source);
     this.artFilter = new Filter({
       glProgram: GlProgram.from({ vertex: defaultFilterVert, fragment: artworkFragment, name: 'liang-artwork' }),
       resolution: 'inherit',
@@ -103,8 +110,10 @@ export class LiangScene {
     });
     this.art.filters = [this.artFilter]; this.text.container.filters = [this.shadow];
     this.stage.addChild(this.art, this.text.container);
-    this.resize(); this.theme(); this.setReduced(reduced);
-    this.sizeObserver = new ResizeObserver(() => { this.resize(); this.layoutDirty = true; this.clock.invalidate(); });
+    this.resize(true); this.theme(); this.setReduced(reduced);
+    this.sizeObserver = new ResizeObserver(() => {
+      if (this.resize()) { this.layoutRevision++; this.layoutDirty = true; this.clock.invalidate(); }
+    });
     this.sizeObserver.observe(this.root);
     this.themeObserver = new MutationObserver(() => { this.theme(); this.clock.invalidate(); });
     this.themeObserver.observe(document.body, { attributes: true, attributeFilter: ['data-ds-dark-theme'] });
@@ -118,17 +127,21 @@ export class LiangScene {
     event.preventDefault();
     if (!this.disposed) this.onFailure(new Error('WebGL context lost; using the basic renderer'));
   };
-  private fontsChanged = () => { this.layoutDirty = true; this.clock.invalidate(); };
+  private fontsChanged = () => { this.layoutRevision++; this.layoutDirty = true; this.clock.invalidate(); };
   private get uniforms() { return this.artFilter.resources.artworkUniforms.uniforms; }
-  private resize() {
+  private resize(force = false) {
     const rect = this.root.getBoundingClientRect();
-    this.width = Math.max(1, rect.width); this.height = Math.max(1, rect.height);
-    this.renderer.resize(this.width, this.height, Math.min(devicePixelRatio || 1, 2));
+    const width = Math.max(1, rect.width), height = Math.max(1, rect.height);
+    const resolution = Math.min(devicePixelRatio || 1, 2);
+    if (!force && width === this.width && height === this.height && resolution === this.resolution) return false;
+    this.width = width; this.height = height; this.resolution = resolution;
+    this.renderer.resize(this.width, this.height, resolution);
     this.art.width = this.width; this.art.height = this.height;
     this.art.filterArea = new Rectangle(0, 0, this.width, this.height);
     this.text.container.filterArea = new Rectangle(0, 0, this.width, this.height);
     this.uniforms.uViewport = new Float32Array([this.width, this.height]);
     this.updateRects();
+    return true;
   }
   private updateRects() {
     const rect = (rule: PortraitRule) => {
@@ -146,12 +159,7 @@ export class LiangScene {
   private draw(elapsed: number) {
     if (this.disposed) return;
     this.elapsed = elapsed;
-    if (this.layoutDirty && this.content?.isConnected) {
-      this.layoutDirty = false;
-      this.text.layout(this.content, this.root);
-      if (this.textMode) { this.text.begin(this.textMode); this.text.drawProgress(this.textProgress); }
-      else if (this.textVisible) { this.text.show(); this.text.startWind(elapsed); }
-    }
+    if (this.layoutDirty && this.content?.isConnected && !this.relayoutRunning) this.refreshLayout();
     this.uniforms.uTime = elapsed;
     this.uniforms.uBreath = this.reduced ? 1 : 1 + .0125 * (1 - Math.cos(elapsed / 10000 * Math.PI * 2));
     this.text.updateWind(elapsed, this.reduced);
@@ -162,10 +170,51 @@ export class LiangScene {
     if (this.reduced !== reduced) { this.text.resetWind(); if (!reduced) this.text.startWind(this.elapsed); }
     this.reduced = reduced; this.clock.setContinuous(!reduced);
   }
-  layoutText(content: HTMLElement) {
+  async prepareText(content: HTMLElement, signal: AbortSignal): Promise<PreparedText> {
+    const combined = AbortSignal.any([signal, this.lifetime.signal]);
+    for (;;) {
+      const revision = this.layoutRevision;
+      const text = await SceneText.prepare(content, this.root, combined);
+      if (combined.aborted) { void text.dispose(); combined.throwIfAborted(); }
+      if (revision !== this.layoutRevision) { void text.dispose(); continue; }
+      // Upload ahead of the entrance frame; the atlas is immutable for this layout.
+      try { if (text.source) this.renderer.texture.initSource(text.source); }
+      catch (error) { void text.dispose(); throw error; }
+      return { text, revision };
+    }
+  }
+  private adoptText(text: SceneText) {
+    const previous = this.text;
+    this.text = text;
+    text.container.filters = [this.shadow];
+    text.container.filterArea = new Rectangle(0, 0, this.width, this.height);
+    text.theme(this.root);
+    previous.container.filters = null;
+    this.stage.addChild(text.container);
+    this.retiring.add(previous);
+    void previous.dispose().finally(() => this.retiring.delete(previous));
+  }
+  async layoutText(content: HTMLElement, signal: AbortSignal, prepared?: PreparedText) {
+    let next = prepared;
+    if (next && next.revision !== this.layoutRevision) { void next.text.dispose(); next = undefined; }
+    next ??= await this.prepareText(content, signal);
+    if (signal.aborted || this.disposed) { void next.text.dispose(); signal.throwIfAborted(); throw new Error('Scene disposed'); }
     this.content = content; this.layoutDirty = false;
-    this.text.layout(content, this.root); this.textVisible = false; this.textMode = null;
+    this.adoptText(next.text); this.textVisible = false; this.textMode = null;
     this.clock.invalidate();
+  }
+  private refreshLayout() {
+    const content = this.content!, previous = this.text;
+    this.layoutDirty = false; this.relayoutRunning = true;
+    void this.prepareText(content, this.lifetime.signal).then(next => {
+      if (this.disposed || previous !== this.text || !content.isConnected) { void next.text.dispose(); return; }
+      const alpha = previous.container.alpha;
+      this.adoptText(next.text); this.text.setAlpha(alpha);
+      if (this.textMode) { this.text.begin(this.textMode); this.text.drawProgress(this.textProgress); }
+      else if (this.textVisible) { this.text.show(); this.text.startWind(this.elapsed); }
+      this.clock.invalidate();
+    }).catch(error => { if (!this.disposed) this.onFailure(error); })
+      .finally(() => { this.relayoutRunning = false; });
   }
   private animate(ms: number, signal: AbortSignal, draw: (progress: number) => void) {
     return animateParticles(ms, AbortSignal.any([signal, this.lifetime.signal]), draw, this.clock);
@@ -226,6 +275,8 @@ export class LiangScene {
     this.canvas.removeEventListener('webglcontextlost', this.contextLost);
     document.fonts.removeEventListener('loadingdone', this.fontsChanged);
     this.text.destroy(); this.artFilter?.destroy(); this.shadow?.destroy(); this.art.destroy();
+    for (const text of this.retiring) text.destroy();
+    this.retiring.clear();
     this.stage.destroy();
     for (const texture of this.portraits.values()) texture.destroy(true);
     this.portraits.clear();

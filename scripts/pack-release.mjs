@@ -28,6 +28,8 @@ for (const marker of ['liang-preview', '模拟状态', 'Reset simulation', 'sour
 let registration;
 const listeners = new Map();
 runInNewContext(client, {
+  // Pixi inspects the user agent when its browser bundle is first imported.
+  navigator: { userAgent: 'DSH release smoke test', platform: 'Linux', maxTouchPoints: 0 },
   window: {
     __ModuleLoader__: { load(value) { registration = value; } },
     localStorage: { getItem() { return null; } },
