@@ -76,7 +76,10 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
   const show = () => {
     setError('');
     const sorted = [...quotes].sort((a, b) => a.text.length - b.text.length);
-    simulation.show(sample === 'shortest' ? sorted[0]!.id : sample === 'longest' ? sorted.at(-1)!.id : undefined);
+    const portraitSample = sample === 'portraitLow' ? sorted.find(quote => quote.classicScore === 89)
+      ?? sorted.find(quote => quote.classicScore < 90) : sample === 'portraitHigh'
+        ? sorted.find(quote => quote.classicScore === 90) ?? sorted.find(quote => quote.classicScore >= 90) : undefined;
+    simulation.show(portraitSample?.id ?? (sample === 'shortest' ? sorted[0]!.id : sample === 'longest' ? sorted.at(-1)!.id : undefined));
   };
   const current = state.request?.quote;
   const source = current ? sources[current.id]?.[0] : undefined;
@@ -113,7 +116,7 @@ function Preview({ simulation, preference, t }: { simulation: Simulation; prefer
           <LiangToggle preference={preference} label={t('liang')} hint={t('toggleHint')} />
           <div className="lx-duration-setting"><span>{t('duration')}</span><output title={t('durationHint')}>{t('durationRange')}</output></div>
           <label>{t('speed')}<select value={state.speed} onChange={event => simulation.setSpeed(Number(event.target.value))}>{[1, 5, 10].map(value => <option key={value} value={value}>{value}×</option>)}</select></label>
-          <label>{t('sample')}<select value={sample} onChange={event => setSample(event.target.value)}>{['random', 'shortest', 'longest'].map(value => <option key={value} value={value}>{t(value as 'random')}</option>)}</select></label>
+          <label>{t('sample')}<select value={sample} onChange={event => setSample(event.target.value)}>{['random', 'shortest', 'longest', 'portraitLow', 'portraitHigh'].map(value => <option key={value} value={value}>{t(value as 'random')}</option>)}</select></label>
         </div>
         <button type="button" className="lx-show" disabled={!state.enabled || state.pending} onClick={show}><SunIcon size={17} />{t(state.pending ? 'transitioning' : current ? 'next' : 'show')}</button>
       </div>

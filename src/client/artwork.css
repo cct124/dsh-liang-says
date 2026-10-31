@@ -17,6 +17,11 @@ body:not([data-ds-dark-theme]) .lx-overlay {
 body:not([data-ds-dark-theme]) .lx-light { opacity: 1; }
 body:not([data-ds-dark-theme]) :is(.lx-aureole, .lx-rays, .lx-halo) { opacity: .5; }
 .lx-shade { position: absolute; inset: 0; background: var(--lx-shade); }
+.lx-scene { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; display: none; }
+.lx-gpu .lx-scene { display: block; }
+.lx-gpu .lx-art { display: none; }
+/* Retain browser wrapping and accessible text while drawing all animated glyphs in WebGL. */
+.lx-gpu .lx-quote { opacity: 0; }
 .lx-art {
   --lx-portrait-height: 112cqh; --lx-portrait-top: 12cqh;
   position: absolute; inset: 0; opacity: 1; isolation: isolate; pointer-events: none; overflow: hidden;
